@@ -259,8 +259,7 @@
             <button class="modal-close tooltip-close">&times;</button>
             <h2 class="section-title" style="margin-bottom: 2rem; border: none; font-size: 2.5rem;">Request Callback</h2>
             
-            <form id="callbackForm" class="callback-form" data-netlify="true" name="callback-form" method="POST">
-                <input type="hidden" name="form-name" value="callback-form" />
+            <form id="callbackForm" class="callback-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                 <div class="form-group">
                     <label for="cb-name">Name *</label>
                     <input type="text" id="cb-name" name="name" required placeholder="John Doe">

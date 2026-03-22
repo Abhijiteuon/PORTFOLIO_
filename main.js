@@ -251,23 +251,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 const formData = new FormData(callbackForm);
                 
-                fetch("/", {
+                fetch(callbackForm.action, {
                     method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString(),
-                })
-                .then(() => {
-                    // Close modal and reset
-                    const modal = document.getElementById('callbackModal');
-                    if(modal) {
-                        modal.classList.remove('active');
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
                     }
-                    callbackForm.reset();
-                    otherGroup.classList.add('hidden');
-                    if (charCount) charCount.textContent = '0 / 64';
-                    const msgCharCount = document.getElementById('msgCharCount');
-                    if (msgCharCount) msgCharCount.textContent = '0 / 50';
-                    alert('Callback request submitted successfully! Your message will reach me via Netlify.');
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Close modal and reset
+                        const modal = document.getElementById('callbackModal');
+                        if(modal) {
+                            modal.classList.remove('active');
+                        }
+                        callbackForm.reset();
+                        otherGroup.classList.add('hidden');
+                        if (charCount) charCount.textContent = '0 / 64';
+                        const msgCharCount = document.getElementById('msgCharCount');
+                        if (msgCharCount) msgCharCount.textContent = '0 / 50';
+                        alert('Callback request submitted successfully! Your message will reach me via Formspree.');
+                    } else {
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                alert(data["errors"].map(error => error["message"]).join(", "));
+                            } else {
+                                alert("Oops! There was a problem submitting your form");
+                            }
+                        })
+                    }
                 })
                 .catch((error) => {
                     console.error('Form submission error:', error);
