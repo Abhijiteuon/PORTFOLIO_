@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 const puppeteer = require('puppeteer'); (async () => { const browser = await puppeteer.launch(); const page = await browser.newPage(); await page.goto('http://localhost:8080/index.html'); await page.click('#hamburgerBtn'); await new Promise(r => setTimeout(r, 500)); await page.click('#openCallbackBtnMenu'); await new Promise(r => setTimeout(r, 500)); const html = await page.evaluate(() => document.getElementById('callbackModal').innerHTML); console.log('INNERHTML: ', html); await browser.close(); })();
-=======
-const puppeteer = require('puppeteer'); (async () => { const browser = await puppeteer.launch(); const page = await browser.newPage(); await page.goto('http://localhost:8080/index.html'); await page.click('#hamburgerBtn'); await new Promise(r => setTimeout(r, 500)); await page.click('#openCallbackBtnMenu'); await new Promise(r => setTimeout(r, 500)); const html = await page.evaluate(() => document.getElementById('callbackModal').innerHTML); console.log('INNERHTML: ', html); await browser.close(); })();
->>>>>>> a1d91fee4b88c4eb5c488de239d229d46705ab91
