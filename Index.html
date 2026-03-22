@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijit Kumar | Software Engineer</title>
+    <meta name="description" content="Professional Portfolio of Abhijit Kumar, Software Engineer">
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Google Analytics (GA4) - Replace G-XXXXXXXXXX with your Tracking ID -->
+    <!-- Place this code at the top of the <head> for best results -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <!-- The Hamburger Button -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- The slide-out menu items -->
+        <div class="hamburger-dropdown" id="hamburgerDropdown">
+            <!-- Theme Toggle Option -->
+            <button id="themeToggle" class="menu-action-btn" aria-label="Switch Theme">
+                <span class="action-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-light" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-dark"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </span>
+                <span class="action-text">Theme</span>
+            </button>
+            
+            <!-- Call / Request Callback Option -->
+            <button id="openCallbackBtnMenu" class="menu-action-btn" aria-label="Request Callback">
+                <span class="action-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </span>
+                <span class="action-text">Callback</span>
+            </button>
+        </div>
+    </div>
+
+    <main data-scroll-container>
+        <!-- Hero Section -->
+        <section class="hero section" id="home">
+            <div class="hero-bg-blob"></div>
+            <div class="hero-content">
+                <h1 class="hero-title reveal-text">
+                    <span class="line"><span>Hi, I'm Abhijit.</span></span>
+                    <span class="line"><span>Aspiring Software Engineer</span></span>
+                    <span class="line"><span>developing solutions for</span></span>
+                    <span class="line"><span>real-world challenges.</span></span>
+                </h1>
+                <p class="hero-subtitle reveal-text delay-1">
+                    B.Tech in Computer Science student seeking opportunities to grow and contribute to impactful software projects.
+                </p>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="menu-btn reveal-fade delay-2" id="aboutNavBtn" style="width: auto; height: auto; padding: 1rem 3rem; background: var(--text-color); color: var(--bg-color); border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: none; font-size: 0.9rem;">Know about me</button>
+                    <button class="menu-btn reveal-fade delay-2" id="resumeNavBtn" style="width: auto; height: auto; padding: 1rem 3rem; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: none; font-size: 0.9rem;">View Resume</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Dashboard Section -->
+        <section class="dashboard section" id="dashboard">
+            <div class="dashboard-header">
+                <div>
+                    <h2 class="dashboard-title reveal-text">
+                        <span class="line"><span>Developer Dashboard</span></span>
+                    </h2>
+                    <p class="dashboard-subtitle reveal-text delay-1">Explore my technical stack and capabilities</p>
+                </div>
+            </div>
+
+            <!-- Featured "Hero App" Banner -->
+            <div class="dash-featured">
+                <div class="featured-card reveal-fade">
+                    <div class="terminal-anim">
+                        <span style="color: #ccc;">abhijit@system:~$</span> <span class="typing">./deploy_portfolio.sh</span>
+                    </div>
+                    <div style="color: #ccc; line-height: 1.6; font-family: monospace;">
+                        > Initializing full-stack development environment...<br>
+                        > Loading system architecture protocols... [OK]<br>
+                        > System status: Operating at peak efficiency.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 1: Backend Services -->
+            <div class="dash-row">
+                <h3 class="dash-row-title reveal-text">Core Backend Infrastructure</h3>
+                <div class="dash-scroller">
+                    <!-- App 1 -->
+                    <a href="#" class="app-card reveal-fade">
+                        <div class="app-icon">J</div>
+                        <div class="app-info">
+                            <h4>Java Spring Boot</h4>
+                            <div class="app-dev">Enterprise Architecture</div>
+                            <div class="app-stats">
+                                <span>4.9</span> <span class="star">★</span>
+                                <div class="stat-divider"></div>
+                                <span>1M+ Req/s</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- App 2 -->
+                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.1s;">
+                        <div class="app-icon">Py</div>
+                        <div class="app-info">
+                            <h4>Python</h4>
+                            <div class="app-dev">Data Processing APIs</div>
+                            <div class="app-stats">
+                                <span>4.8</span> <span class="star">★</span>
+                                <div class="stat-divider"></div>
+                                <span>ML Ready</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- App 3 -->
+                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.2s;">
+                        <div class="app-icon">DB</div>
+                        <div class="app-info">
+                            <h4>MySQL</h4>
+                            <div class="app-dev">Relational Databases</div>
+                            <div class="app-stats">
+                                <span>4.9</span> <span class="star">★</span>
+                                <div class="stat-divider"></div>
+                                <span>ACID Compliant</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Category 2: Frontend & Tooling -->
+            <div class="dash-row">
+                <h3 class="dash-row-title reveal-text">Frontend & Tooling</h3>
+                <div class="dash-scroller">
+                    <!-- App 4 -->
+                    <a href="#" class="app-card reveal-fade">
+                        <div class="app-icon">JS</div>
+                        <div class="app-info">
+                            <h4>JavaScript</h4>
+                            <div class="app-dev">Dynamic Interfaces</div>
+                            <div class="app-stats">
+                                <span>4.9</span> <span class="star">★</span>
+                                <div class="stat-divider"></div>
+                                <span>ES6+</span>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- App 5 -->
+                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.1s;">
+                        <div class="app-icon">TW</div>
+                        <div class="app-info">
+                            <h4>Tailwind CSS</h4>
+                            <div class="app-dev">Utility-first Styling</div>
+                            <div class="app-stats">
+                                <span>4.8</span> <span class="star">★</span>
+                                <div class="stat-divider"></div>
+                                <span>Responsive</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- App 6 -->
+                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.2s;">
+                        <div class="app-icon">Git</div>
+                        <div class="app-info">
+                            <h4>Git / GitHub</h4>
+                            <div class="app-dev">Version Control</div>
+                            <div class="app-stats">
+                                <span>5.0</span> <span class="star">★</span>
+                                <div class="stat-divider"></div>
+                                <span>100% Uptime</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section class="work section" id="work">
+            <h2 class="section-title" style="margin-bottom: 2rem;">Selected Work</h2>
+            <div class="work-list">
+                <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80">
+                    <span class="work-title">Roomer PG Finder</span>
+                    <span class="work-category">Web Platform</span>
+                </a>
+                <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80">
+                    <span class="work-title">Data Structures</span>
+                    <span class="work-category">C / Java / Python</span>
+                </a>
+                <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&q=80">
+                    <span class="work-title">Backend Services</span>
+                    <span class="work-category">Spring Boot / MySQL</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Callback Request Section -->
+        <section class="callback-section section" id="callback" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6rem; margin-top: 4rem;">
+            <h2 class="section-title reveal-text" style="border: none; margin-bottom: 2rem;">Let's Connect</h2>
+            <p class="hero-subtitle reveal-text delay-1" style="margin-bottom: 3rem;">Have an opportunity or just want to chat?</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="menu-btn reveal-fade delay-2" id="contactNavBtn" style="width: auto; height: auto; padding: 1rem 3rem; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Contact Info</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Base Overlays -->
+    <!-- The About Modal -->
+    <div class="about-modal" id="aboutModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="profile.jpg" alt="Abhijit Kumar" id="profileImage">
+                </div>
+                <div class="modal-info">
+                    <h3 class="modal-name">Abhijit Kumar</h3>
+                    <p class="modal-bio">Aspiring Software Engineer pursuing B.Tech in Computer Science with strong academic performance. Interested in applying programming knowledge to develop solutions for real-world challenges. Skilled in analytical thinking, problem-solving, and continuous learning.</p>
+                    <div class="modal-details">
+                        <div class="detail-group">
+                            <h4>Education</h4>
+                            <p>B.Tech in CSE<br>Mangalmay Institute of Technology<br>2024 - 2028</p>
+                        </div>
+                        <div class="detail-group">
+                            <h4>Skills</h4>
+                            <p>Java, Python, C++, HTML, Tailwind CSS, JS, Spring Boot, MySQL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Callback Modal -->
+    <div class="about-modal" id="callbackModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" style="max-width: 600px;">
+            <button class="modal-close tooltip-close">&times;</button>
+            <h2 class="section-title" style="margin-bottom: 2rem; border: none; font-size: 2.5rem;">Request Callback</h2>
+            
+            <form id="callbackForm" class="callback-form" data-netlify="true" name="callback-form" method="POST">
+                <input type="hidden" name="form-name" value="callback-form" />
+                <div class="form-group">
+                    <label for="cb-name">Name *</label>
+                    <input type="text" id="cb-name" name="name" required placeholder="John Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cb-phone">Phone Number *</label>
+                    <input type="tel" id="cb-phone" name="phone" required placeholder="+1 234 567 8900">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cb-email">Email ID *</label>
+                    <input type="email" id="cb-email" name="email" required placeholder="john@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cb-reason">Reason for Callback *</label>
+                    <select id="cb-reason" name="reason" required>
+                        <option value="" disabled selected>Select a reason...</option>
+                        <option value="employer">Employer / Job Opportunity</option>
+                        <option value="education">Education / Mentorship</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group hidden" id="otherReasonGroup">
+                    <label for="cb-other">Please specify * (max 64 chars)</label>
+                    <input type="text" id="cb-other" name="other-reason" maxlength="64" placeholder="Brief description...">
+                    <small class="char-count">0 / 64</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cb-message">Drop a message (Optional, max 50 chars)</label>
+                    <textarea id="cb-message" name="message" maxlength="50" placeholder="Briefly describe your request..." style="resize: none; height: 80px;"></textarea>
+                    <small class="char-count" id="msgCharCount">0 / 50</small>
+                </div>
+                
+                <button type="submit" class="submit-btn" style="width: 100%; padding: 1rem; background: var(--text-color); color: var(--bg-color); border: none; border-radius: 8px; font-weight: 600; font-size: 1rem; margin-top: 1rem; cursor: none;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div class="about-modal" id="resumeModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content resume-modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="resume-container">
+                <header class="resume-header">
+                    <h1>ABHIJIT KUMAR</h1>
+                    <p class="resume-subtitle">Software Engineer</p>
+                </header>
+                
+                <div class="resume-grid">
+                    <aside class="resume-sidebar">
+                        <section class="resume-section">
+                            <h3>CONTACT</h3>
+                            <ul class="resume-contact-list">
+                                <li><span class="icon">📧</span> work.abhijit.27@gmail.com</li>
+                                <li><span class="icon">📍</span> Greater Noida, UP</li>
+                                <li><span class="icon">🔗</span> <a href="https://linkedin.com/in/abhijit-kumar" target="_blank">linkedin.com/in/abhijit-kumar</a></li>
+                                <li><span class="icon">🐙</span> <a href="https://github.com/Abhijiteuon" target="_blank">github.com/Abhijiteuon</a></li>
+                            </ul>
+                        </section>
+
+                        <section class="resume-section">
+                            <h3>EDUCATION</h3>
+                            <p><strong>Mangalmay Institute of Engineering and Technology, Aktu</strong></p>
+                            <p>2024 - 2028</p>
+                            <p>B.Tech in CSE</p>
+                        </section>
+
+                        <section class="resume-section">
+                            <h3>AWARDS & CERTIFICATIONS</h3>
+                            <ul class="resume-list">
+                                <li>AI fluency for students</li>
+                            </ul>
+                        </section>
+                    </aside>
+
+                    <article class="resume-main">
+                        <section class="resume-section">
+                            <h3>PROFILE</h3>
+                            <p>Aspiring Software Engineer pursuing B.Tech in Computer Science with strong academic performance. Interested in applying programming knowledge to develop solutions for real-world challenges. Skilled in analytical thinking, problem-solving, and continuous learning. Seeking opportunities to grow as a developer and contribute to impactful software projects.</p>
+                        </section>
+
+                        <section class="resume-section">
+                            <h3>SKILLS</h3>
+                            <div class="resume-skills-grid">
+                                <div>
+                                    <h4>Programming Languages:</h4>
+                                    <p>C (Data Structures & Algorithms), Java (OOPS), Python</p>
+                                </div>
+                                <div>
+                                    <h4>Web & Backend Development:</h4>
+                                    <p>HTML5, Tailwind CSS, Spring Boot</p>
+                                </div>
+                                <div>
+                                    <h4>Database:</h4>
+                                    <p>MySQL</p>
+                                </div>
+                                <div>
+                                    <h4>Development Tools / IDEs:</h4>
+                                    <p>Visual Studio Code, IntelliJ IDEA, Antigravity, Anaconda</p>
+                                </div>
+                                <div>
+                                    <h4>Version Control:</h4>
+                                    <p>Git</p>
+                                </div>
+                                <div>
+                                    <h4>Soft Skills:</h4>
+                                    <p>Problem Solving, Analytical Thinking, Communication Skills, Team Collaboration, Adaptability, Time Management</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="resume-section">
+                            <h3>PROJECTS</h3>
+                            <div class="resume-project">
+                                <h4>Roomer: PG Finder Web Platform</h4>
+                                <p class="project-tags">HTML, Tailwind CSS, JavaScript, Leaflet.js</p>
+                                <ul class="resume-list">
+                                    <li>Built a responsive platform to help users discover PG accommodations and nearby services.</li>
+                                    <li>Integrated interactive maps using Leaflet.js and OpenStreetMap to display PG locations.</li>
+                                    <li>Implemented search and filtering features and designed a mobile-friendly interface using Tailwind CSS.</li>
+                                </ul>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="about-modal" id="contactModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close tooltip-close">&times;</button>
+            <div class="footer-content" style="padding: 4rem 0;">
+                <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: #888;">Drop a line</h2>
+                <a href="mailto:work.abhijit.27@gmail.com" class="footer-email">work.abhijit.27@gmail.com</a>
+                <div class="social-links" style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                    <a href="https://linkedin.com/in/abhijit-kumar" target="_blank" style="display: flex; align-items: center; gap: 0.75rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Abhijiteuon" target="_blank" style="display: flex; align-items: center; gap: 0.75rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.instagram.com/abhijit_euon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="display: flex; align-items: center; gap: 0.75rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        Instagram
+                    </a>
+
+                </div>
+                
+                <!-- Redundant Callback removed as requested -->
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+</body>
+</html>
