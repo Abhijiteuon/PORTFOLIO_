@@ -199,13 +199,11 @@ ul {
 }
 
 .profile-banner {
-    height: 80px;
-    background: var(--primary-gradient);
-    opacity: 0.8;
+    display: none;
 }
 
 .profile-avatar-wrapper {
-    margin-top: -30px;
+    padding-top: 2rem;
 }
 
 .profile-avatar {
@@ -775,7 +773,7 @@ ul {
 .modal-image {
     width: 100%;
     aspect-ratio: 3/4;
-    background-color: var(--accent-color);
+    background-color: transparent;
     overflow: hidden;
     position: relative;
 }
