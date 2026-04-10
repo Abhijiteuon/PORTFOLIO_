@@ -79,47 +79,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const cursorFollower = document.querySelector('.cursor-follower');
     const navLinks = document.querySelectorAll('a, .work-item, .modal-close, .hamburger-btn, .menu-action-btn, .menu-btn, .submit-btn');
 
-    let mouseX = 0, mouseY = 0;
-    let followerX = 0, followerY = 0;
+    // Custom Cursor Logic - Only for devices with hover capability
+    if (window.matchMedia('(hover: hover)').matches) {
+        let mouseX = 0, mouseY = 0;
+        let followerX = 0, followerY = 0;
 
-    // Follower easing function
-    function animateCursor() {
-        if (!cursor || !cursorFollower) return;
-        
-        // Smooth follower
-        followerX += (mouseX - followerX) * 0.15;
-        followerY += (mouseY - followerY) * 0.15;
-
-        cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-        cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
-
-        requestAnimationFrame(animateCursor);
-    }
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    animateCursor();
-
-    // Hover states for cursor
-    navLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            cursor.classList.add('active');
-            cursorFollower.classList.add('active');
+        // Follower easing function
+        function animateCursor() {
+            if (!cursor || !cursorFollower) return;
             
-            if (link.classList.contains('work-item')) {
-                cursorFollower.classList.add('view-project');
-            }
+            // Smooth follower
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
+
+            cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+            cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
 
-        link.addEventListener('mouseleave', () => {
-            cursor.classList.remove('active');
-            cursorFollower.classList.remove('active');
-            cursorFollower.classList.remove('view-project');
+        animateCursor();
+
+        // Hover states for cursor
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+                cursorFollower.classList.add('active');
+                
+                if (link.classList.contains('work-item')) {
+                    cursorFollower.classList.add('view-project');
+                }
+            });
+
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+                cursorFollower.classList.remove('active');
+                cursorFollower.classList.remove('view-project');
+            });
         });
-    });
+    } else {
+        // Ensure cursor elements are hidden on non-hover devices
+        if (cursor) cursor.style.display = 'none';
+        if (cursorFollower) cursorFollower.style.display = 'none';
+        document.body.style.cursor = 'auto';
+    }
 
     // Work Item Image Reveal Logic
     const workItems = document.querySelectorAll('.work-item');
@@ -176,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Then setup the close logic ONLY ONCE per modal to avoid duplicate event listeners
+    // Then setup the close logic ONLY ONCE per modal
     const uniqueModals = [...new Set(modalsMap.map(m => m.modal).filter(Boolean))];
     uniqueModals.forEach(modal => {
         const closeBtn = modal.querySelector('.modal-close');
@@ -184,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const closeModal = () => {
             modal.classList.remove('active');
+            document.body.style.overflow = ''; // Unlock scroll
         };
 
         if (closeBtn) {
@@ -192,6 +201,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (overlay) {
             overlay.addEventListener('click', closeModal);
+        }
+    });
+
+    // Body scroll lock trigger
+    modalsMap.forEach(({btn, modal}) => {
+        if(btn && modal) {
+            btn.addEventListener('click', () => {
+                if (modal.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden'; // Lock scroll
+                }
+            });
         }
     });
 
