@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalsMap = [
         { btn: document.getElementById('aboutNavBtn'), modal: document.getElementById('aboutModal') },
         { btn: document.getElementById('resumeNavBtn'), modal: document.getElementById('resumeModal') },
+        { btn: document.getElementById('resumeNavBtnMenu'), modal: document.getElementById('resumeModal') },
         { btn: document.getElementById('contactNavBtn'), modal: document.getElementById('contactModal') },
         { btn: document.getElementById('openCallbackBtn'), modal: document.getElementById('callbackModal') },
         { btn: document.getElementById('openCallbackBtnContact'), modal: document.getElementById('callbackModal') },
