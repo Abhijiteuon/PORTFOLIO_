@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconDark = document.querySelector('.theme-icon-dark');
     
     // Check local storage for theme preference
-    const savedTheme = localStorage.getItem('theme') || 'theme-light';
+    const savedTheme = localStorage.getItem('theme') || 'theme-dark';
     document.body.className = savedTheme;
     
     if (savedTheme === 'theme-light') {
