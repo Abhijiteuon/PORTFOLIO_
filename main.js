@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.className = savedTheme;
     
     if (savedTheme === 'theme-light') {
-        iconLight.style.display = 'block';
-        iconDark.style.display = 'none';
+        if (iconLight) iconLight.style.display = 'block';
+        if (iconDark) iconDark.style.display = 'none';
     } else {
-        iconLight.style.display = 'none';
-        iconDark.style.display = 'block';
+        if (iconLight) iconLight.style.display = 'none';
+        if (iconDark) iconDark.style.display = 'block';
     }
     
     if (themeToggle) {
@@ -48,32 +48,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.remove('theme-dark');
                 document.body.classList.add('theme-light');
                 localStorage.setItem('theme', 'theme-light');
-                iconLight.style.display = 'block';
-                iconDark.style.display = 'none';
+                if (iconLight) iconLight.style.display = 'block';
+                if (iconDark) iconDark.style.display = 'none';
             } else {
                 document.body.classList.remove('theme-light');
                 document.body.classList.add('theme-dark');
                 localStorage.setItem('theme', 'theme-dark');
-                iconLight.style.display = 'none';
-                iconDark.style.display = 'block';
+                if (iconLight) iconLight.style.display = 'none';
+                if (iconDark) iconDark.style.display = 'block';
             }
         });
         
         // Add custom cursor effect
         themeToggle.addEventListener('mouseenter', () => {
-            document.querySelector('.cursor').classList.add('active');
-            document.querySelector('.cursor-follower').classList.add('active');
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            if (cursor) cursor.classList.add('active');
+            if (cursorFollower) cursorFollower.classList.add('active');
         });
         themeToggle.addEventListener('mouseleave', () => {
-            document.querySelector('.cursor').classList.remove('active');
-            document.querySelector('.cursor-follower').classList.remove('active');
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            if (cursor) cursor.classList.remove('active');
+            if (cursorFollower) cursorFollower.classList.remove('active');
         });
     }
 
     // Custom Cursor Logic
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
-    const navLinks = document.querySelectorAll('a, .work-item, .modal-close, .hamburger-btn, .menu-action-btn');
+    const navLinks = document.querySelectorAll('a, .work-item, .modal-close, .hamburger-btn, .menu-action-btn, .menu-btn, .submit-btn');
 
     let mouseX = 0, mouseY = 0;
     let followerX = 0, followerY = 0;
@@ -220,6 +224,45 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
     
+    // --- Real Visit Counter Implementation ---
+    const VISIT_API_URL = 'https://api.counterapi.dev/v1/abhijit-portfolio/visits';
+
+    async function initVisitCounter() {
+        const viewsDisplay = document.getElementById('profile-views-count');
+        if (!viewsDisplay) return;
+
+        try {
+            // Increment and fetch the count
+            const response = await fetch(`${VISIT_API_URL}/up`);
+            const data = await response.json();
+            
+            if (data && data.count) {
+                animateValue(viewsDisplay, 0, data.count, 2000);
+            }
+        } catch (error) {
+            console.error('Failed to fetch visit count:', error);
+            // Fallback to static or zero if API fails
+            viewsDisplay.textContent = '0';
+        }
+    }
+
+    // Smooth counting animation for stats
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+
+    // Call the counter on load
+    initVisitCounter();
+
     // Callback Form Logic
     const reasonSelect = document.getElementById('cb-reason');
     const otherGroup = document.getElementById('otherReasonGroup');

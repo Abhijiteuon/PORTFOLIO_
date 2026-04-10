@@ -22,280 +22,221 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="theme-dark">
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu" id="hamburgerMenu">
-        <!-- The Hamburger Button -->
-        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-        
-        <!-- The slide-out menu items -->
-        <div class="hamburger-dropdown" id="hamburgerDropdown">
-            <!-- Theme Toggle Option -->
-            <button id="themeToggle" class="menu-action-btn" aria-label="Switch Theme">
-                <span class="action-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-light" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-dark"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </span>
-                <span class="action-text">Theme</span>
-            </button>
-            
-            <!-- Call / Request Callback Option -->
-            <button id="openCallbackBtnMenu" class="menu-action-btn" aria-label="Request Callback">
-                <span class="action-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                </span>
-                <span class="action-text">Callback</span>
-            </button>
+    <header class="top-nav">
+        <div class="nav-container">
+            <div class="logo">AK</div>
+            <div class="nav-links">
+                <!-- Hamburger Menu moved here -->
+                <div class="hamburger-menu" id="hamburgerMenu">
+                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    <div class="hamburger-dropdown" id="hamburgerDropdown">
+                        <button id="themeToggle" class="menu-action-btn" aria-label="Switch Theme">
+                            <span class="theme-icon-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+                            <span class="theme-icon-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                        </button>
+                        <button id="openCallbackBtnMenu" class="menu-action-btn" aria-label="Request Callback">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.19-1.16a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.92z"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </header>
+
+    <div class="app-layout">
+        <!-- Sidebar Left -->
+        <aside class="sidebar-left">
+            <div class="profile-card">
+                <div class="profile-banner"></div>
+                <div class="profile-avatar-wrapper">
+                    <img src="profile.jpg" alt="Abhijit Kumar" class="profile-avatar">
+                </div>
+                <div class="profile-info">
+                    <h2 class="profile-name">Abhijit Kumar</h2>
+                    <p class="profile-headline">Software Engineer @ Aspiring</p>
+                </div>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span>Profile views</span>
+                        <span class="stat-value" id="profile-views-count">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>Post impressions</span>
+                        <span class="stat-value" id="post-impressions-count">856</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-card" style="padding: 1rem;">
+                <button class="menu-btn" id="resumeNavBtn" style="width: 100%; padding: 0.8rem; background: var(--primary-gradient); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">View Resume</button>
+            </div>
+        </aside>
+
+        <main class="feed-content">
+            <!-- Hero / About integrated as a feed card -->
+            <section class="feed-card hero-section">
+                <div class="card-body">
+                    <h1 class="hero-title reveal-text">
+                        <span class="line"><span>ABHIJIT</span></span>
+                        <span class="line"><span>KUMAR.</span></span>
+                    </h1>
+                    <p class="hero-subtitle reveal-text delay-1">
+                        B.TECH SOFTWARE ENGINEER. DEVELOPING SOLUTIONS FOR REAL-WORLD CHALLENGES.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <button class="menu-btn reveal-fade delay-2" id="aboutNavBtn" style="padding: 0.8rem 2rem; border: 1px solid var(--accent-color); color: var(--accent-color); text-transform: uppercase; font-weight: 700; letter-spacing: 1px; border-radius: 4px; background: transparent; cursor: pointer;">EXPLORE PROFILE</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Technical Stack Card -->
+            <section class="feed-card" id="skills">
+                <div class="card-header">
+                    <h2 style="font-size: 1.25rem;">Technical Stack</h2>
+                </div>
+                <div class="card-body">
+                    <div class="dash-row" style="margin-bottom: 0;">
+                        <div class="dash-scroller" style="padding: 0; gap: 1rem;">
+                            <!-- Simplified App Cards for Feed -->
+                            <div class="app-card" style="min-width: 200px; padding: 1rem;">
+                                <div class="app-icon" style="width: 40px; height: 40px; font-size: 1rem;">J</div>
+                                <div class="app-info">
+                                    <h4 style="font-size: 0.9rem;">Java Spring Boot</h4>
+                                    <div class="app-dev" style="font-size: 0.7rem;">Backend</div>
+                                </div>
+                            </div>
+                            <div class="app-card" style="min-width: 200px; padding: 1rem;">
+                                <div class="app-icon" style="width: 40px; height: 40px; font-size: 1rem;">Py</div>
+                                <div class="app-info">
+                                    <h4 style="font-size: 0.9rem;">Python</h4>
+                                    <div class="app-dev" style="font-size: 0.7rem;">Data/Scripting</div>
+                                </div>
+                            </div>
+                            <div class="app-card" style="min-width: 200px; padding: 1rem;">
+                                <div class="app-icon" style="width: 40px; height: 40px; font-size: 1rem;">JS</div>
+                                <div class="app-info">
+                                    <h4 style="font-size: 0.9rem;">JavaScript</h4>
+                                    <div class="app-dev" style="font-size: 0.7rem;">Frontend</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-- Projects Card -->
+            <section class="feed-card" id="projects">
+                <div class="card-header">
+                    <h2 style="font-size: 1.25rem;">Selected Projects</h2>
+                </div>
+                <div class="card-body">
+                    <div class="work-list">
+                        <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80">
+                            <span class="work-title" style="font-size: 1.2rem;">Roomer PG Finder</span>
+                            <span class="work-category">Web Platform</span>
+                        </a>
+                        <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80">
+                            <span class="work-title" style="font-size: 1.2rem;">Data Structures</span>
+                            <span class="work-category">C / Java / Python</span>
+                        </a>
+                        <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&q=80">
+                            <span class="work-title" style="font-size: 1.2rem;">Backend Services</span>
+                            <span class="work-category">Spring Boot / MySQL</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications Card -->
+            <section class="feed-card" id="certs">
+                <div class="card-header">
+                    <h2 style="font-size: 1.25rem;">Certifications & Achievements</h2>
+                </div>
+                <div class="card-body">
+                    <div class="cert-grid" style="grid-template-columns: 1fr; gap: 1rem; padding: 0;">
+                        <!-- Cert 1 -->
+                        <a href="https://verify.skilljar.com/c/as6feweidp5k" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
+                            <div class="cert-icon" style="width: 40px; height: 40px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            </div>
+                            <div class="cert-info">
+                                <h3 style="font-size: 1rem;">AI Fluency for Students</h3>
+                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">Skilljar</p>
+                                <span class="cert-link" style="font-size: 0.7rem;">View →</span>
+                            </div>
+                        </a>
+                        <!-- Cert 2 -->
+                        <a href="https://www.testdome.com/certificates/ae6193798d3343188b459499fd7c4728" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
+                            <div class="cert-icon" style="width: 40px; height: 40px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                            </div>
+                            <div class="cert-info">
+                                <h3 style="font-size: 1rem;">Power BI Certification</h3>
+                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">TestDome / Silver Level</p>
+                                <span class="cert-link" style="font-size: 0.7rem;">View →</span>
+                            </div>
+                        </a>
+                        <!-- Cert 3 -->
+                        <a href="https://www.testdome.com/certificates/030915af77d24004a7d1ad70ff9e2000" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
+                            <div class="cert-icon" style="width: 40px; height: 40px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                            </div>
+                            <div class="cert-info">
+                                <h3 style="font-size: 1rem;">C Programming Certification</h3>
+                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">TestDome / Silver Level</p>
+                                <span class="cert-link" style="font-size: 0.7rem;">View →</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Replaced sections below -->
+        </main>
+
+        <!-- Sidebar Right -->
+        <aside class="sidebar-right">
+            <div class="feed-card">
+                <div class="card-header">
+                    <h3 style="font-size: 1rem;">Analytics Dashboard</h3>
+                </div>
+                <div class="card-body">
+                    <div class="dash-row" style="margin-bottom: 1rem;">
+                        <div class="stat-item">
+                            <span>GitHub Contributions</span>
+                            <span class="stat-value">842</span>
+                        </div>
+                        <div style="height: 4px; background: #30363d; border-radius: 2px; margin-top: 8px;">
+                            <div style="width: 80%; height: 100%; background: var(--primary-gradient); border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="dash-row">
+                        <div class="stat-item">
+                            <span>Skill Proficiency</span>
+                            <span class="stat-value">92%</span>
+                        </div>
+                        <div style="height: 4px; background: #30363d; border-radius: 2px; margin-top: 8px;">
+                            <div style="width: 92%; height: 100%; background: var(--secondary-gradient); border-radius: 2px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-card">
+                <div class="card-header">
+                    <h3 style="font-size: 1rem;">Let's Connect</h3>
+                </div>
+                <div class="card-body">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Open to opportunities and collaboration.</p>
+                    <button class="menu-btn" id="contactNavBtn" style="width: 100%; padding: 0.8rem; border: 1px solid var(--card-border); background: var(--glass-bg); color: var(--text-color); border-radius: 8px; cursor: pointer;">Contact Info</button>
+                </div>
+            </div>
+        </aside>
     </div>
-
-    <main data-scroll-container>
-        <!-- Hero Section -->
-        <section class="hero section" id="home">
-            <div class="hero-bg-blob"></div>
-            <div class="hero-content">
-                <h1 class="hero-title reveal-text">
-                    <span class="line"><span>Hi, I'm Abhijit.</span></span>
-                    <span class="line"><span>Aspiring Software Engineer</span></span>
-                    <span class="line"><span>developing solutions for</span></span>
-                    <span class="line"><span>real-world challenges.</span></span>
-                </h1>
-                <p class="hero-subtitle reveal-text delay-1">
-                    B.Tech in Computer Science student seeking opportunities to grow and contribute to impactful software projects.
-                </p>
-                <div style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center; flex-wrap: wrap;">
-                    <button class="menu-btn reveal-fade delay-2" id="aboutNavBtn" style="width: auto; height: auto; padding: 1rem 3rem; background: var(--text-color); color: var(--bg-color); border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: none; font-size: 0.9rem;">Know about me</button>
-                    <button class="menu-btn reveal-fade delay-2" id="resumeNavBtn" style="width: auto; height: auto; padding: 1rem 3rem; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border: none; font-size: 0.9rem;">View Resume</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Developer Dashboard Section -->
-        <section class="dashboard section" id="dashboard">
-            <div class="dashboard-header">
-                <div>
-                    <h2 class="dashboard-title reveal-text">
-                        <span class="line"><span>Developer Dashboard</span></span>
-                    </h2>
-                    <p class="dashboard-subtitle reveal-text delay-1">Explore my technical stack and capabilities</p>
-                </div>
-            </div>
-
-            <!-- Featured "Hero App" Banner -->
-            <div class="dash-featured">
-                <div class="featured-card reveal-fade">
-                    <div class="terminal-anim">
-                        <span style="color: #ccc;">abhijit@system:~$</span> <span class="typing">./deploy_portfolio.sh</span>
-                    </div>
-                    <div style="color: #ccc; line-height: 1.6; font-family: monospace;">
-                        > Initializing full-stack development environment...<br>
-                        > Loading system architecture protocols... [OK]<br>
-                        > System status: Operating at peak efficiency.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Category 1: Backend Services -->
-            <div class="dash-row">
-                <h3 class="dash-row-title reveal-text">Core Backend Infrastructure</h3>
-                <div class="dash-scroller">
-                    <!-- App 1 -->
-                    <a href="#" class="app-card reveal-fade">
-                        <div class="app-icon">J</div>
-                        <div class="app-info">
-                            <h4>Java Spring Boot</h4>
-                            <div class="app-dev">Enterprise Architecture</div>
-                            <div class="app-stats">
-                                <span>4.9</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>1M+ Req/s</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <!-- App 2 -->
-                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.1s;">
-                        <div class="app-icon">Py</div>
-                        <div class="app-info">
-                            <h4>Python</h4>
-                            <div class="app-dev">Data Processing APIs</div>
-                            <div class="app-stats">
-                                <span>4.8</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>ML Ready</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- App 3 -->
-                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.2s;">
-                        <div class="app-icon">DB</div>
-                        <div class="app-info">
-                            <h4>MySQL</h4>
-                            <div class="app-dev">Relational Databases</div>
-                            <div class="app-stats">
-                                <span>4.9</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>ACID Compliant</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Category 2: Frontend & Tooling -->
-            <div class="dash-row">
-                <h3 class="dash-row-title reveal-text">Frontend & Tooling</h3>
-                <div class="dash-scroller">
-                    <!-- App 4 -->
-                    <a href="#" class="app-card reveal-fade">
-                        <div class="app-icon">JS</div>
-                        <div class="app-info">
-                            <h4>JavaScript</h4>
-                            <div class="app-dev">Dynamic Interfaces</div>
-                            <div class="app-stats">
-                                <span>4.9</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>ES6+</span>
-                            </div>
-                        </div>
-                    </a>
-                    
-                    <!-- App 5 -->
-                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.1s;">
-                        <div class="app-icon">TW</div>
-                        <div class="app-info">
-                            <h4>Tailwind CSS</h4>
-                            <div class="app-dev">Utility-first Styling</div>
-                            <div class="app-stats">
-                                <span>4.8</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>Responsive</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- App 6 -->
-                    <a href="#" class="app-card reveal-fade" style="transition-delay: 0.2s;">
-                        <div class="app-icon">Git</div>
-                        <div class="app-info">
-                            <h4>Git / GitHub</h4>
-                            <div class="app-dev">Version Control</div>
-                            <div class="app-stats">
-                                <span>5.0</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>100% Uptime</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Category 3: Data & Analytics -->
-            <div class="dash-row">
-                <h3 class="dash-row-title reveal-text">Data & Analytics</h3>
-                <div class="dash-scroller">
-                    <!-- App 7 -->
-                    <a href="#" class="app-card reveal-fade">
-                        <div class="app-icon" style="color: #f2c811;">BI</div>
-                        <div class="app-info">
-                            <h4>Microsoft Power BI</h4>
-                            <div class="app-dev">Data Visualization</div>
-                            <div class="app-stats">
-                                <span>4.8</span> <span class="star">★</span>
-                                <div class="stat-divider"></div>
-                                <span>Insight Driven</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Work Section -->
-        <section class="work section" id="work">
-            <h2 class="section-title" style="margin-bottom: 2rem;">Selected Work</h2>
-            <div class="work-list">
-                <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80">
-                    <span class="work-title">Roomer PG Finder</span>
-                    <span class="work-category">Web Platform</span>
-                </a>
-                <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80">
-                    <span class="work-title">Data Structures</span>
-                    <span class="work-category">C / Java / Python</span>
-                </a>
-                <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&q=80">
-                    <span class="work-title">Backend Services</span>
-                    <span class="work-category">Spring Boot / MySQL</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section class="certifications section" id="certifications">
-            <h2 class="section-title reveal-text" style="margin-bottom: 2rem;">Certifications</h2>
-            <div class="cert-grid">
-                <!-- Cert 1 -->
-                <a href="https://verify.skilljar.com/c/as6feweidp5k" target="_blank" class="cert-card reveal-fade">
-                    <div class="cert-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                    </div>
-                    <div class="cert-info">
-                        <h3>AI Fluency for Students</h3>
-                        <p>Skilljar / Professional Certification</p>
-                        <span class="cert-link">View Certificate →</span>
-                    </div>
-                </a>
-                
-                <!-- Cert 2 -->
-                <a href="https://www.testdome.com/certificates/ae6193798d3343188b459499fd7c4728" target="_blank" class="cert-card reveal-fade" style="transition-delay: 0.1s;">
-                    <div class="cert-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-                    </div>
-                    <div class="cert-info">
-                        <h3>Power BI Certification</h3>
-                        <p>TestDome / Silver Level</p>
-                        <span class="cert-link">View Certificate →</span>
-                    </div>
-                </a>
-
-                <!-- Cert 3 -->
-                <a href="https://www.testdome.com/certificates/030915af77d24004a7d1ad70ff9e2000" target="_blank" class="cert-card reveal-fade" style="transition-delay: 0.2s;">
-                    <div class="cert-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-                    </div>
-                    <div class="cert-info">
-                        <h3>C Programming Certification</h3>
-                        <p>TestDome / Silver Level</p>
-                        <span class="cert-link">View Certificate →</span>
-                    </div>
-                </a>
-                
-                <!-- Placeholder for more certificates -->
-                <div class="cert-card reveal-fade" style="opacity: 0.5; cursor: default; transition-delay: 0.3s;">
-                    <div class="cert-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    </div>
-                    <div class="cert-info">
-                        <h3>More Coming Soon</h3>
-                        <p>Ongoing Learning</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Callback Request Section -->
-        <section class="callback-section section" id="callback" style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 6rem; margin-top: 4rem;">
-            <h2 class="section-title reveal-text" style="border: none; margin-bottom: 2rem;">Let's Connect</h2>
-            <p class="hero-subtitle reveal-text delay-1" style="margin-bottom: 3rem;">Have an opportunity or just want to chat?</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <button class="menu-btn reveal-fade delay-2" id="contactNavBtn" style="width: auto; height: auto; padding: 1rem 3rem; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); border-radius: 30px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Contact Info</button>
-            </div>
-        </section>
-    </main>
 
     <!-- Modal Base Overlays -->
     <!-- The About Modal -->
@@ -333,19 +274,21 @@
             <h2 class="section-title" style="margin-bottom: 2rem; border: none; font-size: 2.5rem;">Request Callback</h2>
             
             <form id="callbackForm" class="callback-form" action="https://formspree.io/f/myknaloz" method="POST">
-                <div class="form-group">
-                    <label for="cb-name">Name *</label>
-                    <input type="text" id="cb-name" name="name" required placeholder="John Doe">
-                </div>
-                
-                <div class="form-group">
-                    <label for="cb-phone">Phone Number *</label>
-                    <input type="tel" id="cb-phone" name="phone" required placeholder="+1 234 567 8900">
-                </div>
-                
-                <div class="form-group">
-                    <label for="cb-email">Email ID *</label>
-                    <input type="email" id="cb-email" name="email" required placeholder="john@example.com">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cb-name">Name *</label>
+                        <input type="text" id="cb-name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cb-phone">Phone Number *</label>
+                        <input type="tel" id="cb-phone" name="phone" required placeholder="+1 234 567 8900">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cb-email">Email ID *</label>
+                        <input type="email" id="cb-email" name="email" required placeholder="john@example.com">
+                    </div>
                 </div>
                 
                 <div class="form-group">
@@ -481,17 +424,17 @@
             <div class="footer-content" style="padding: 4rem 0;">
                 <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: #888;">Drop a line</h2>
                 <a href="mailto:work.abhijit.27@gmail.com" class="footer-email">work.abhijit.27@gmail.com</a>
-                <div class="social-links" style="margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-                    <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" style="display: flex; align-items: center; gap: 0.75rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <div class="social-links" style="margin-top: 3rem; display: flex; flex-direction: row; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 4px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         LinkedIn
                     </a>
-                    <a href="https://github.com/Abhijiteuon" target="_blank" style="display: flex; align-items: center; gap: 0.75rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    <a href="https://github.com/Abhijiteuon" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 4px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         GitHub
                     </a>
-                    <a href="https://www.instagram.com/abhijit_euon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="display: flex; align-items: center; gap: 0.75rem;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <a href="https://www.instagram.com/abhijit_euon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 4px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         Instagram
                     </a>
                 </div>
