@@ -122,6 +122,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 cursorFollower.classList.remove('view-project');
             });
         });
+        // Magnetic Button Effect
+        const magneticBtns = document.querySelectorAll('.menu-btn, .submit-btn');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                if (cursorFollower) cursorFollower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%) scale(1.5)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0, 0)`;
+            });
+        });
+
+        // Hero Parallax Mesh
+        const heroMesh = document.querySelector('.hero-mesh');
+        if (heroMesh) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth - 0.5) * 50;
+                const y = (e.clientY / window.innerHeight - 0.5) * 50;
+                heroMesh.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        }
     } else {
         // Ensure cursor elements are hidden on non-hover devices
         if (cursor) cursor.style.display = 'none';
@@ -129,26 +155,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.cursor = 'auto';
     }
 
-    // Work Item Image Reveal Logic
-    const workItems = document.querySelectorAll('.work-item');
-    const workSection = document.querySelector('.work-list');
-
-    // Create a generic preview div to handle background image swapping
-    const previewDiv = document.createElement('div');
-    previewDiv.classList.add('work-image-preview');
-    workSection.appendChild(previewDiv);
-
-    workItems.forEach(item => {
-        item.addEventListener('mouseenter', (e) => {
-            const imageSrc = item.getAttribute('data-image');
-            previewDiv.style.backgroundImage = `url(${imageSrc})`;
-            previewDiv.classList.add('active');
-        });
-
-        item.addEventListener('mouseleave', () => {
-             previewDiv.classList.remove('active');
-        });
-    });
+    // Bento Grid Image Reveal Logic (Optional - if we want specialized JS handling)
+    // The current CSS handles hover scaling, so we only need JS if we want extra effects.
 
 
     // General Modal Logic

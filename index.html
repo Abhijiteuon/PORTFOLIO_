@@ -85,7 +85,14 @@
         <main class="feed-content">
             <!-- Hero / About integrated as a feed card -->
             <section class="feed-card hero hero-section">
-                <div class="card-body">
+                <!-- Dynamic Mesh Gradient -->
+                <div class="hero-mesh">
+                    <div class="mesh-ball"></div>
+                    <div class="mesh-ball"></div>
+                    <div class="mesh-ball"></div>
+                    <div class="mesh-ball"></div>
+                </div>
+                <div class="card-body hero-content">
                     <h1 class="hero-title reveal-text">
                         <span class="line"><span>ABHIJIT</span></span>
                         <span class="line"><span>KUMAR.</span></span>
@@ -107,25 +114,31 @@
                     <div class="dash-row">
                         <div class="dash-scroller">
                             <!-- Simplified App Cards for Feed -->
-                            <div class="app-card" style="min-width: 200px; padding: 1rem;">
-                                <div class="app-icon" style="width: 40px; height: 40px; font-size: 1rem;">J</div>
+                            <div class="app-card" style="min-width: 200px; padding: 1.5rem;">
+                                <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(227, 76, 38, 0.1); border: 1px solid rgba(227, 76, 38, 0.3);">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e34c26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10l1 2v14l-1 2H7l-1-2V4l1-2z"/><path d="M12 18V6"/><path d="M9 10h6"/></svg>
+                                </div>
                                 <div class="app-info">
-                                    <h4 style="font-size: 0.9rem;">Java Spring Boot</h4>
-                                    <div class="app-dev" style="font-size: 0.7rem;">Backend</div>
+                                    <h4 style="font-size: 1rem; font-weight: 700;">Java Spring</h4>
+                                    <div class="app-dev" style="font-size: 0.8rem; color: #e34c26;">Enterprise Backend</div>
                                 </div>
                             </div>
-                            <div class="app-card" style="min-width: 200px; padding: 1rem;">
-                                <div class="app-icon" style="width: 40px; height: 40px; font-size: 1rem;">Py</div>
+                            <div class="app-card" style="min-width: 200px; padding: 1.5rem;">
+                                <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(55, 118, 171, 0.1); border: 1px solid rgba(55, 118, 171, 0.3);">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3776ab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
+                                </div>
                                 <div class="app-info">
-                                    <h4 style="font-size: 0.9rem;">Python</h4>
-                                    <div class="app-dev" style="font-size: 0.7rem;">Data/Scripting</div>
+                                    <h4 style="font-size: 1rem; font-weight: 700;">Python</h4>
+                                    <div class="app-dev" style="font-size: 0.8rem; color: #3776ab;">AI & Scripting</div>
                                 </div>
                             </div>
-                            <div class="app-card" style="min-width: 200px; padding: 1rem;">
-                                <div class="app-icon" style="width: 40px; height: 40px; font-size: 1rem;">JS</div>
+                            <div class="app-card" style="min-width: 200px; padding: 1.5rem;">
+                                <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(247, 223, 30, 0.1); border: 1px solid rgba(247, 223, 30, 0.3);">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f7df1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M18 10v4s-1 1-2 1-2-1-2-1"/><path d="M11 10s-1-1-2-1-2 1-2 2 1 2 2 2h0c1 0 2 1 2 2s-1 2-2 2-2-1-2-1"/></svg>
+                                </div>
                                 <div class="app-info">
-                                    <h4 style="font-size: 0.9rem;">JavaScript</h4>
-                                    <div class="app-dev" style="font-size: 0.7rem;">Frontend</div>
+                                    <h4 style="font-size: 1rem; font-weight: 700;">Modern JS</h4>
+                                    <div class="app-dev" style="font-size: 0.8rem; color: #f7df1e;">React & Logic</div>
                                 </div>
                             </div>
                         </div>
@@ -141,19 +154,35 @@
                     <h2 style="font-size: 1.25rem;">Selected Projects</h2>
                 </div>
                 <div class="card-body">
-                    <div class="work-list">
-                        <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80">
-                            <span class="work-title" style="font-size: 1.2rem;">Roomer PG Finder</span>
-                            <span class="work-category">Web Platform</span>
-                        </a>
-                        <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80">
-                            <span class="work-title" style="font-size: 1.2rem;">Data Structures</span>
-                            <span class="work-category">C / Java / Python</span>
-                        </a>
-                        <a href="#" class="work-item" data-image="https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&q=80">
-                            <span class="work-title" style="font-size: 1.2rem;">Backend Services</span>
-                            <span class="work-category">Spring Boot / MySQL</span>
-                        </a>
+                    <div class="bento-grid">
+                        <div class="bento-item reveal-fade">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80" alt="Roomer" class="item-image">
+                            <div class="bento-overlay">
+                                <span class="bento-tag">Web Platform</span>
+                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem;">Roomer PG Finder</h3>
+                            </div>
+                        </div>
+                        <div class="bento-item reveal-fade" style="transition-delay: 0.1s;">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80" alt="DSA" class="item-image">
+                            <div class="bento-overlay">
+                                <span class="bento-tag">Algorithms</span>
+                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem;">Data Structures</h3>
+                            </div>
+                        </div>
+                        <div class="bento-item reveal-fade" style="transition-delay: 0.2s;">
+                            <img src="https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&q=80" alt="Backend" class="item-image">
+                            <div class="bento-overlay">
+                                <span class="bento-tag">Spring Boot</span>
+                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem;">Backend Services</h3>
+                            </div>
+                        </div>
+                        <div class="bento-item reveal-fade" style="transition-delay: 0.3s;">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" alt="Analytics" class="item-image">
+                            <div class="bento-overlay">
+                                <span class="bento-tag">Power BI</span>
+                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem;">Business Analytics</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
