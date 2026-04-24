@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Custom Cursor Logic
     const cursor = document.querySelector('.cursor');
     const cursorFollower = document.querySelector('.cursor-follower');
-    const navLinks = document.querySelectorAll('a, .work-item, .modal-close, .hamburger-btn, .menu-action-btn, .menu-btn, .submit-btn');
+    const navLinks = document.querySelectorAll('a, .work-item, .modal-close, .hamburger-btn, .menu-action-btn, .menu-btn, .submit-btn, .logo');
 
     // Custom Cursor Logic - Only for devices with hover capability
     if (window.matchMedia('(hover: hover)').matches) {
@@ -162,10 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // General Modal Logic
     // General Modal Logic
     const modalsMap = [
+        { btn: document.getElementById('aboutNavBtnHero'), modal: document.getElementById('aboutModal') },
+        { btn: document.getElementById('resumeNavBtnHero'), modal: document.getElementById('resumeModal') },
+        { btn: document.getElementById('hireMeBtnHero'), modal: document.getElementById('callbackModal') },
         { btn: document.getElementById('aboutNavBtn'), modal: document.getElementById('aboutModal') },
         { btn: document.getElementById('resumeNavBtn'), modal: document.getElementById('resumeModal') },
         { btn: document.getElementById('resumeNavBtnMenu'), modal: document.getElementById('resumeModal') },
         { btn: document.getElementById('contactNavBtn'), modal: document.getElementById('contactModal') },
+        { btn: document.getElementById('logoBtn'), modal: document.getElementById('profilePopup') },
         { btn: document.getElementById('openCallbackBtn'), modal: document.getElementById('callbackModal') },
         { btn: document.getElementById('openCallbackBtnContact'), modal: document.getElementById('callbackModal') },
         { btn: document.getElementById('openCallbackBtnMenu'), modal: document.getElementById('callbackModal') }
@@ -391,5 +395,44 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerInitialReveals();
     } else {
         window.addEventListener('load', triggerInitialReveals);
+    }
+    // Google Form Submission Handler
+    const googleForm = document.getElementById('googleHireMeForm');
+    const successOverlay = document.getElementById('formSuccessMessage');
+    const urgencySlider = document.getElementById('gh-urgency');
+    const urgencyValue = document.getElementById('urgencyValue');
+    
+    const urgencyLabels = {
+        1: 'Very Low', 2: 'Low', 3: 'Minor', 4: 'Casual', 
+        5: 'Normal', 6: 'Moderate', 7: 'High', 8: 'Urgent', 
+        9: 'Critical', 10: 'Immediate'
+    };
+
+    if (urgencySlider && urgencyValue) {
+        urgencySlider.addEventListener('input', (e) => {
+            const val = e.target.value;
+            urgencyValue.textContent = `${val} - ${urgencyLabels[val]}`;
+        });
+    }
+
+    if (googleForm) {
+        googleForm.addEventListener('submit', () => {
+            const submitBtn = googleForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            submitBtn.textContent = 'SENDING...';
+            submitBtn.disabled = true;
+
+            // Since we target a hidden iframe, the page won't reload.
+            // We show the success UI after a brief delay to ensure the request is sent.
+            setTimeout(() => {
+                successOverlay.style.display = 'flex';
+                googleForm.reset();
+                if (urgencyValue) urgencyValue.textContent = '5 - Normal';
+                
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }, 1000);
+        });
     }
 });
