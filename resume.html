@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijit Kumar - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Standalone Print-Friendly Resume Styles */
+        :root {
+            --primary: #111;
+            --secondary: #444;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: var(--primary);
+            font-size: 11pt; /* Standard print size */
+            line-height: 1.5;
+        }
+
+        .page-container {
+            background: white;
+            width: 210mm;
+            min-height: 297mm; /* A4 dimensions */
+            margin: 2rem auto;
+            padding: 15mm;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+
+        /* Print Settings */
+        @page {
+            size: A4;
+            margin: 0; /* Let the container padding handle the margins */
+        }
+
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+                padding: 0;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .page-container {
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+            }
+            a {
+                text-decoration: none;
+                color: var(--primary);
+            }
+            .resume-section {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            margin: 0 0 4px 0;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        h2.subtitle {
+            font-size: 14pt;
+            color: var(--accent);
+            margin: 0 0 16px 0;
+            font-weight: 500;
+        }
+
+        h3.section-title {
+            font-size: 12pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 4px;
+            margin: 20px 0 12px 0;
+            color: var(--primary);
+            letter-spacing: 0.05em;
+        }
+
+        h4.item-title {
+            font-size: 11.5pt;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
+
+        p {
+            margin: 0 0 8px 0;
+        }
+
+        /* Header / Contact */
+        .header {
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 10pt;
+            color: var(--secondary);
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Layout */
+        .resume-content {
+            display: flex;
+            gap: 32px;
+        }
+
+        .main-column {
+            flex: 2;
+        }
+
+        .side-column {
+            flex: 1;
+        }
+
+        /* Lists */
+        ul {
+            margin: 0 0 12px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        /* specific items */
+        .project-item {
+            margin-bottom: 16px;
+        }
+        
+        .project-meta {
+            font-size: 9.5pt;
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .skill-category {
+            margin-bottom: 12px;
+        }
+
+        .skill-category h4 {
+            font-size: 10.5pt;
+            margin-bottom: 2px;
+            color: var(--primary);
+        }
+        
+        .skill-category p {
+            font-size: 10pt;
+            color: var(--secondary);
+        }
+
+        .education-item p {
+            margin: 2px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Abhijit Kumar</h1>
+            <h2 class="subtitle">Software Engineer</h2>
+            <div class="contact-info">
+                <span>📧 work.abhijit.27@gmail.com</span>
+                <span>📍 Greater Noida, UP</span>
+                <span>🔗 linkedin.com/in/abhijit-kumar-713827284</span>
+                <span>🐙 github.com/Abhijiteuon</span>
+            </div>
+        </div>
+
+        <div class="resume-content">
+            <!-- Main Content (Left Column) -->
+            <div class="main-column">
+                <div class="resume-section">
+                    <h3 class="section-title">Profile</h3>
+                    <p>Aspiring Software Engineer pursuing B.Tech in Computer Science with strong academic performance. Interested in applying programming knowledge to develop solutions for real-world challenges. Skilled in analytical thinking, problem-solving, and continuous learning. Seeking opportunities to grow as a developer and contribute to impactful software projects.</p>
+                </div>
+
+                <div class="resume-section">
+                    <h3 class="section-title">Projects</h3>
+                    
+                    <div class="project-item">
+                        <h4 class="item-title">College Compass</h4>
+                        <div class="project-meta">Web Application, Data Analytics, Platform</div>
+                        <ul>
+                            <li>Developed a comprehensive college discovery and compensation intelligence platform.</li>
+                            <li>Built an organized, ledger-style dashboard for comparing admission cutoffs and verified placements.</li>
+                            <li>Live: college-compass-iota.vercel.app</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4 class="item-title">Student Dashboard</h4>
+                        <div class="project-meta">Web Application, Frontend, Dashboard</div>
+                        <ul>
+                            <li>Developed a comprehensive live student dashboard for analytics and management.</li>
+                            <li>Built with modern frontend technologies focusing on UX and responsiveness.</li>
+                            <li>Live: student-dashboard-sage.vercel.app</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4 class="item-title">She Can Foundation App</h4>
+                        <div class="project-meta">Web Application, Frontend, Community Platform</div>
+                        <ul>
+                            <li>Built an interactive web application for the She Can Foundation.</li>
+                            <li>Designed an intuitive UI to support community engagement and foundation goals.</li>
+                            <li>Live: she-can-foundation-app.vercel.app</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-item">
+                        <h4 class="item-title">UPI Payment App</h4>
+                        <div class="project-meta">Web Application, Frontend, Payment Interface</div>
+                        <ul>
+                            <li>Developed a responsive UPI payment application interface.</li>
+                            <li>Focused on modern UI/UX design principles and interactive components.</li>
+                            <li>Live: upi-payment-app-puce.vercel.app</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Content (Right Column) -->
+            <div class="side-column">
+                <div class="resume-section">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <h4 class="item-title">B.Tech in CSE</h4>
+                        <p>Mangalmay Institute of Engineering and Technology, Aktu</p>
+                        <p style="color: var(--secondary); font-size: 10pt;">2024 - 2028</p>
+                    </div>
+                </div>
+
+                <div class="resume-section">
+                    <h3 class="section-title">Skills</h3>
+                    
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <p>C (TestDome Certified, DSA), Java (OOPS), Python, C++</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Web & Backend</h4>
+                        <p>HTML5, Tailwind CSS, Spring Boot</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Database</h4>
+                        <p>MySQL</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Tools / IDEs</h4>
+                        <p>VS Code, IntelliJ IDEA, Antigravity, Anaconda, Git</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Data & Analytics</h4>
+                        <p>Microsoft Power BI</p>
+                    </div>
+                </div>
+
+                <div class="resume-section">
+                    <h3 class="section-title">Certifications</h3>
+                    <ul>
+                        <li>NCAT AI Participation (Naukri)</li>
+                        <li>AI fluency for students</li>
+                        <li>Power BI (TestDome)</li>
+                        <li>C Programming (TestDome)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
