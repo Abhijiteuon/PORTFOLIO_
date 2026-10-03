@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijit Kumar - Curriculum Vitae (CV)</title>
+    <meta name="description" content="Curriculum Vitae of Abhijit Kumar, Software Engineer & Full Stack Developer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Root Variables */
+        :root {
+            --primary: #0f172a;        /* Slate 900 */
+            --primary-dark: #020617;
+            --secondary: #334155;      /* Slate 700 */
+            --muted: #64748b;          /* Slate 500 */
+            --accent: #2563eb;         /* Royal Blue */
+            --accent-dark: #1d4ed8;
+            --accent-light: #eff6ff;
+            --border: #cbd5e1;         /* Slate 300 */
+            --border-light: #e2e8f0;
+            --bg-page: #ffffff;
+            --bg-body: #f1f5f9;
+            --tag-bg: #f1f5f9;
+            --tag-text: #334155;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-heading: 'Outfit', 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-body);
+            color: var(--primary);
+            font-size: 10pt;
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Top Action Bar for Screen View */
+        .action-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            color: #ffffff;
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .action-bar-title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-bar-title span {
+            color: #60a5fa;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* CV Document Canvas */
+        .cv-wrapper {
+            max-width: 210mm;
+            margin: 24px auto 40px auto;
+            background: var(--bg-page);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cv-container {
+            padding: 18mm 20mm;
+        }
+
+        /* Header Section */
+        .cv-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .header-left {
+            flex: 1;
+        }
+
+        .candidate-name {
+            font-family: var(--font-heading);
+            font-size: 24pt;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .candidate-title {
+            font-size: 12pt;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 14px;
+            font-size: 9pt;
+            color: var(--secondary);
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item a {
+            color: var(--secondary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--border);
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .contact-item svg {
+            width: 12px;
+            height: 12px;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        /* Section Title Styling */
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary-dark);
+            border-bottom: 1.5px solid var(--border);
+            padding-bottom: 3px;
+            margin-top: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1.5px;
+            background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+            margin-left: 10px;
+        }
+
+        /* Section Layouts */
+        .cv-section {
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .summary-text {
+            font-size: 9.3pt;
+            color: var(--secondary);
+            text-align: justify;
+            line-height: 1.45;
+        }
+
+        /* Experience Item */
+        .item-block {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 2px;
+        }
+
+        .item-role {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .item-company {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .item-duration {
+            font-size: 8.8pt;
+            font-weight: 600;
+            color: var(--muted);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .item-location {
+            font-size: 8.5pt;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8.8pt;
+            margin-bottom: 4px;
+            color: var(--muted);
+        }
+
+        .tag-badge {
+            display: inline-block;
+            font-size: 7.5pt;
+            font-weight: 600;
+            padding: 1px 6px;
+            border-radius: 3px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            border: 1px solid var(--border-light);
+        }
+
+        .tag-badge.accent-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        /* Bullet lists */
+        .cv-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 3px;
+        }
+
+        .cv-list li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 9pt;
+            color: var(--secondary);
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+
+        .cv-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 2px;
+            top: -1px;
+            color: var(--accent);
+            font-size: 10pt;
+        }
+
+        .cv-list li strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Skills Grid */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+            margin-top: 4px;
+        }
+
+        .skills-table tr {
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .skills-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .skills-table td {
+            padding: 4px 6px;
+            vertical-align: top;
+        }
+
+        .skills-label {
+            font-weight: 700;
+            color: var(--primary);
+            width: 28%;
+            white-space: nowrap;
+        }
+
+        .skills-val {
+            color: var(--secondary);
+            width: 72%;
+        }
+
+        /* Projects 2-Column Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 14px;
+        }
+
+        .project-card {
+            background: #fafafa;
+            border: 1px solid var(--border-light);
+            border-left: 3px solid var(--accent);
+            padding: 6px 10px;
+            border-radius: 3px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .project-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .project-name {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .project-link {
+            font-size: 7.8pt;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-tags {
+            font-size: 8pt;
+            color: var(--muted);
+            margin-bottom: 4px;
+            font-style: italic;
+        }
+
+        /* Education Table / Grid */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 9pt;
+        }
+
+        .edu-degree {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .edu-school {
+            color: var(--secondary);
+            font-size: 8.8pt;
+        }
+
+        .edu-score {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 8.5pt;
+        }
+
+        .edu-year {
+            color: var(--muted);
+            font-size: 8.5pt;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        /* Certifications Grid */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 14px;
+            font-size: 8.8pt;
+        }
+
+        .cert-entry {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            color: var(--secondary);
+        }
+
+        .cert-bullet {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .cert-name {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .cert-org {
+            color: var(--muted);
+            font-size: 8pt;
+        }
+
+        /* Print Specific CSS Optimization */
+        @page {
+            size: A4;
+            margin: 10mm 12mm 10mm 12mm;
+        }
+
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                font-size: 9.5pt;
+            }
+
+            .action-bar {
+                display: none !important;
+            }
+
+            .cv-wrapper {
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            .cv-container {
+                padding: 0 !important;
+            }
+
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
+            }
+
+            .project-card {
+                background: #ffffff !important;
+                border: 1px solid #e2e8f0 !important;
+                border-left: 3px solid #2563eb !important;
+            }
+
+            .cv-section, .item-block, .project-card {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Action Bar (Screen Only) -->
+    <div class="action-bar">
+        <div class="action-bar-title">
+            <strong>ABHIJIT KUMAR</strong>
+            <span>• Professional Curriculum Vitae (CV)</span>
+        </div>
+        <div class="action-buttons">
+            <a href="index.html" class="btn btn-secondary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Portfolio Home
+            </a>
+            <button onclick="window.print()" class="btn btn-primary" title="Print or Save as PDF">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                Print / Save as PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Document Canvas -->
+    <div class="cv-wrapper">
+        <div class="cv-container">
+
+            <!-- Header -->
+            <header class="cv-header">
+                <div class="header-left">
+                    <h1 class="candidate-name">Abhijit Kumar</h1>
+                    <div class="candidate-title">Software Engineer • Full Stack Developer</div>
+                    <div class="contact-grid">
+                        <span class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:work.abhijit.27@gmail.com">work.abhijit.27@gmail.com</a>
+                        </span>
+                        <span class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.19-1.16a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.92z"/></svg>
+                            +91 9341866358
+                        </span>
+                        <span class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Greater Noida, UP, India
+                        </span>
+                        <span class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank">linkedin.com/in/abhijit-kumar</a>
+                        </span>
+                        <span class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/Abhijiteuon" target="_blank">github.com/Abhijiteuon</a>
+                        </span>
+                        <span class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <a href="https://abhijitportfolio-five.vercel.app" target="_blank">abhijitportfolio-five.vercel.app</a>
+                        </span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Professional Summary -->
+            <section class="cv-section">
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="summary-text">
+                    Aspiring Software Engineer pursuing B.Tech in Computer Science & Engineering with strong academic grounding and hands-on production experience in Full Stack and Backend Development. Experienced in building robust, scalable applications using <strong>Java (Spring Boot)</strong>, <strong>Python</strong>, and modern frontend technologies like <strong>JavaScript</strong> and <strong>Tailwind CSS</strong>. Demonstrated track record of delivering end-to-end web platforms for NGOs and enterprises during full-stack internship tenure. Passionate about solving complex software engineering challenges, data structures & algorithms, and writing clean, maintainable code.
+                </p>
+            </section>
+
+            <!-- Professional Experience -->
+            <section class="cv-section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="item-block">
+                    <div class="item-header">
+                        <div>
+                            <span class="item-role">Full Stack Developer Intern</span>
+                            <span class="item-company"> — Bireena Info Tech Co.</span>
+                        </div>
+                        <span class="item-duration">01 July 2026 – 30 August 2026 (2 Months)</span>
+                    </div>
+                    <div class="item-meta">
+                        <span><em>Certificate Credential ID: BR2K26FSD031 (ISO 9001:2015 & AICTE Recognized)</em></span>
+                        <span class="tag-badge accent-badge">Verified Internship</span>
+                    </div>
+                    <ul class="cv-list">
+                        <li>Awarded Certificate of Completion with recognition for <strong>outstanding performance and dedication</strong> in full-stack software development.</li>
+                        <li><strong>Enduring Welfare Organisation NGO Web Platform:</strong> Architected and developed a full-stack platform enabling community outreach, initiative management, media galleries, and admin portal workflows.</li>
+                        <li><strong>Soohagan Silk E-Commerce & Catalog Website:</strong> Designed and implemented a high-performance, responsive web platform featuring structured apparel showcases and smooth interactive navigation.</li>
+                        <li>Built reusable, modular UI components, integrated RESTful API services, and ensured cross-browser responsive design and accessibility standards.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="cv-section">
+                <h2 class="section-title">Technical Skills</h2>
+                <table class="skills-table">
+                    <tr>
+                        <td class="skills-label">Programming Languages</td>
+                        <td class="skills-val">Java (Core & OOPs), Python, C (TestDome Certified & DSA), C++, JavaScript (ES6+), PHP</td>
+                    </tr>
+                    <tr>
+                        <td class="skills-label">Web & Backend Technologies</td>
+                        <td class="skills-val">Spring Boot, REST APIs, HTML5, CSS3, Tailwind CSS, React / Next.js Basics</td>
+                    </tr>
+                    <tr>
+                        <td class="skills-label">Databases & Architecture</td>
+                        <td class="skills-val">MySQL, SQLite, Relational Database Modeling, CRUD Architecture</td>
+                    </tr>
+                    <tr>
+                        <td class="skills-label">Tools, IDEs & Platforms</td>
+                        <td class="skills-val">Git, GitHub, Visual Studio Code, IntelliJ IDEA, Anaconda, Microsoft Power BI, Vercel</td>
+                    </tr>
+                    <tr>
+                        <td class="skills-label">Core Competencies</td>
+                        <td class="skills-val">Data Structures & Algorithms, Object-Oriented Design, Problem Solving, Analytical Thinking, Team Collaboration</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Key Technical Projects -->
+            <section class="cv-section">
+                <h2 class="section-title">Key Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">College Compass</span>
+                            <a href="https://college-compass-iota.vercel.app/" target="_blank" class="project-link">Live App ↗</a>
+                        </div>
+                        <div class="project-tags">Web App • Data Analytics • Verified Placements Platform</div>
+                        <ul class="cv-list">
+                            <li>Developed a comprehensive college discovery and compensation intelligence platform.</li>
+                            <li>Engineered an organized ledger-style dashboard for comparing cutoffs and placement data.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">Roomer: PG Accommodation Finder</span>
+                            <span class="tag-badge">Full Stack</span>
+                        </div>
+                        <div class="project-tags">HTML5 • Tailwind CSS • JavaScript • Leaflet.js • OSM API</div>
+                        <ul class="cv-list">
+                            <li>Developed interactive accommodation platform with geolocation mapping and radius filters.</li>
+                            <li>Engineered advanced search algorithms for seamless local PG and services discovery.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">TaskMaster PHP System</span>
+                            <a href="https://abhijit-euon.free.nf/" target="_blank" class="project-link">Live System ↗</a>
+                        </div>
+                        <div class="project-tags">PHP • SQLite • Security Architecture • Session Auth</div>
+                        <ul class="cv-list">
+                            <li>Built secure task management engine featuring bcrypt password hashing and session tokens.</li>
+                            <li>Integrated zero-configuration SQLite database with complete XSS/CSRF protection.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">Student Dashboard</span>
+                            <a href="https://student-dashboard-sage.vercel.app/" target="_blank" class="project-link">Live App ↗</a>
+                        </div>
+                        <div class="project-tags">Frontend Architecture • UX Analytics • Responsive UI</div>
+                        <ul class="cv-list">
+                            <li>Built a live student performance dashboard for analytics and academic management.</li>
+                            <li>Implemented accessible, interactive components with optimized rendering speeds.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">She Can Foundation App</span>
+                            <a href="https://she-can-foundation-app.vercel.app/" target="_blank" class="project-link">Live App ↗</a>
+                        </div>
+                        <div class="project-tags">Community Platform • Frontend Web App</div>
+                        <ul class="cv-list">
+                            <li>Built web application for She Can Foundation supporting community engagement initiatives.</li>
+                            <li>Designed an intuitive UI to streamline digital communication and member participation.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">UPI Payment Interface</span>
+                            <a href="https://upi-payment-app-puce.vercel.app/" target="_blank" class="project-link">Live App ↗</a>
+                        </div>
+                        <div class="project-tags">FinTech UI Flow • Interactive Components</div>
+                        <ul class="cv-list">
+                            <li>Developed responsive UPI payment simulation interface following modern UX principles.</li>
+                            <li>Implemented dynamic payment verification flows and interactive status feedback.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="cv-section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-grid">
+                    <div class="edu-item">
+                        <div>
+                            <div class="edu-degree">Bachelor of Technology (B.Tech) in Computer Science & Engineering</div>
+                            <div class="edu-school">Mangalmay Institute of Engineering and Technology, AKTU • <span class="edu-score">CGPA: 8.0 / 10.0</span></div>
+                        </div>
+                        <div class="edu-year">2024 – 2028</div>
+                    </div>
+                    <div class="edu-item">
+                        <div>
+                            <div class="edu-degree">Class 12th (Senior Secondary) — CBSE Board</div>
+                            <div class="edu-school">Shanti Niketan Sr. Sec. School • <span class="edu-score">Score: 84%</span></div>
+                        </div>
+                        <div class="edu-year">2021 – 2023</div>
+                    </div>
+                    <div class="edu-item">
+                        <div>
+                            <div class="edu-degree">Class 10th (Secondary) — CBSE Board</div>
+                            <div class="edu-school">Sunshine Prep High School • <span class="edu-score">Score: 90%</span></div>
+                        </div>
+                        <div class="edu-year">2021</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Honors, Certifications & Achievements -->
+            <section class="cv-section">
+                <h2 class="section-title">Certifications & Achievements</h2>
+                <div class="certs-grid">
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">Full Stack Developer Internship Certificate</span> — 
+                            <span class="cert-org">Bireena Info Tech Co. (ID: BR2K26FSD031)</span>
+                        </div>
+                    </div>
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">Data Structures & Algorithms</span> — 
+                            <span class="cert-org">IIT Kanpur (Verified Certificate)</span>
+                        </div>
+                    </div>
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">Claude 101 Certification</span> — 
+                            <span class="cert-org">Anthropic / Skilljar</span>
+                        </div>
+                    </div>
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">AI Fluency for Students</span> — 
+                            <span class="cert-org">Skilljar</span>
+                        </div>
+                    </div>
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">Power BI Certification (Silver Level)</span> — 
+                            <span class="cert-org">TestDome</span>
+                        </div>
+                    </div>
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">C Programming Certification</span> — 
+                            <span class="cert-org">TestDome</span>
+                        </div>
+                    </div>
+                    <div class="cert-entry">
+                        <span class="cert-bullet">✓</span>
+                        <div>
+                            <span class="cert-name">NCAT AI Participation</span> — 
+                            <span class="cert-org">Naukri Campus</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>
