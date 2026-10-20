@@ -174,7 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { btn: document.getElementById('openCallbackBtnContact'), modal: document.getElementById('callbackModal') },
         { btn: document.getElementById('openCallbackBtnMenu'), modal: document.getElementById('callbackModal') },
         { btn: document.getElementById('openBireenaModalBtn'), modal: document.getElementById('bireenaCertModal') },
-        { btn: document.getElementById('openBireenaModalBtn2'), modal: document.getElementById('bireenaCertModal') }
+        { btn: document.getElementById('openBireenaModalBtn2'), modal: document.getElementById('bireenaCertModal') },
+        { btn: document.getElementById('openGenosparkModalBtn'), modal: document.getElementById('genosparkCertModal') },
+        { btn: document.getElementById('openGenosparkModalBtn2'), modal: document.getElementById('genosparkCertModal') }
     ];
 
     // First setup all buttons to open their respective modals
