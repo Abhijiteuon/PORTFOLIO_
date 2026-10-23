@@ -34,16 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
         let width = canvas.width = window.innerWidth;
         let height = canvas.height = window.innerHeight;
 
-        const isMobile = window.innerWidth < 768;
-        const particleCount = isMobile ? 25 : 50;
-        const maxDist = isMobile ? 100 : 140;
+        const isPhone = window.innerWidth < 540;
+        const isTablet = window.innerWidth < 768;
+        const particleCount = isPhone ? 16 : (isTablet ? 28 : 50);
+        const maxDist = isPhone ? 80 : (isTablet ? 100 : 140);
 
         let mouse = { x: -1000, y: -1000 };
 
         window.addEventListener('mousemove', (e) => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
-        });
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches && e.touches[0]) {
+                mouse.x = e.touches[0].clientX;
+                mouse.y = e.touches[0].clientY;
+            }
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            mouse.x = -1000;
+            mouse.y = -1000;
+        }, { passive: true });
 
         window.addEventListener('mouseleave', () => {
             mouse.x = -1000;
