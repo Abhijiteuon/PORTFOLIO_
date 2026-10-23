@@ -376,6 +376,10 @@
             gap: 10px 14px;
         }
 
+        .projects-grid .project-card:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+
         .project-card {
             background: #fafafa;
             border: 1px solid var(--border-light);
@@ -652,7 +656,7 @@
                 <table class="skills-table">
                     <tr>
                         <td class="skills-label">Programming Languages</td>
-                        <td class="skills-val">Java (Core & OOPs), Python, C (TestDome Certified & DSA), C++, JavaScript (ES6+), PHP</td>
+                        <td class="skills-val">Java (Core & OOPs), Python, C (TestDome Certified & DSA), C++, JavaScript (ES6+), TypeScript</td>
                     </tr>
                     <tr>
                         <td class="skills-label">Web & Backend Technologies</td>
@@ -681,6 +685,32 @@
                     <!-- Project 1 -->
                     <div class="project-card">
                         <div class="project-card-header">
+                            <span class="project-name">codeED Academy</span>
+                            <a href="https://codeed-academy.vercel.app/" target="_blank" class="project-link">Live Platform ↗</a>
+                        </div>
+                        <div class="project-tags">Currently Working On • EdTech &amp; Coding Platform • Full Stack</div>
+                        <ul class="cv-list">
+                            <li>Architecting an interactive coding academy platform with modular engineering tracks and structured curricula.</li>
+                            <li>Engineered responsive modern interface with progress indicators, real-time feedback, and learning modules.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">M4EX Scheduler</span>
+                            <a href="https://m4ex-scheduler.vercel.app/" target="_blank" class="project-link">Live App ↗</a>
+                        </div>
+                        <div class="project-tags">Coaching Mini-Project • Timetable &amp; Batch Scheduler</div>
+                        <ul class="cv-list">
+                            <li>Engineered dynamic timetable and batch scheduling portal for coaching institute operations.</li>
+                            <li>Implemented interactive slot allocation, faculty schedule mapping, and responsive schedule visualization.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
                             <span class="project-name">College Compass</span>
                             <a href="https://college-compass-iota.vercel.app/" target="_blank" class="project-link">Live App ↗</a>
                         </div>
@@ -688,32 +718,6 @@
                         <ul class="cv-list">
                             <li>Developed a comprehensive college discovery and compensation intelligence platform.</li>
                             <li>Engineered an organized ledger-style dashboard for comparing cutoffs and placement data.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-card">
-                        <div class="project-card-header">
-                            <span class="project-name">Roomer: PG Accommodation Finder</span>
-                            <span class="tag-badge">Full Stack</span>
-                        </div>
-                        <div class="project-tags">HTML5 • Tailwind CSS • JavaScript • Leaflet.js • OSM API</div>
-                        <ul class="cv-list">
-                            <li>Developed interactive accommodation platform with geolocation mapping and radius filters.</li>
-                            <li>Engineered advanced search algorithms for seamless local PG and services discovery.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-card">
-                        <div class="project-card-header">
-                            <span class="project-name">TaskMaster PHP System</span>
-                            <a href="https://abhijit-euon.free.nf/" target="_blank" class="project-link">Live System ↗</a>
-                        </div>
-                        <div class="project-tags">PHP • SQLite • Security Architecture • Session Auth</div>
-                        <ul class="cv-list">
-                            <li>Built secure task management engine featuring bcrypt password hashing and session tokens.</li>
-                            <li>Integrated zero-configuration SQLite database with complete XSS/CSRF protection.</li>
                         </ul>
                     </div>
 
@@ -753,6 +757,19 @@
                         <ul class="cv-list">
                             <li>Developed responsive UPI payment simulation interface following modern UX principles.</li>
                             <li>Implemented dynamic payment verification flows and interactive status feedback.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Project 7 -->
+                    <div class="project-card">
+                        <div class="project-card-header">
+                            <span class="project-name">Roomer: PG Accommodation Finder</span>
+                            <span class="tag-badge">Full Stack</span>
+                        </div>
+                        <div class="project-tags">HTML5 • Tailwind CSS • JavaScript • Leaflet.js • OSM API</div>
+                        <ul class="cv-list">
+                            <li>Developed interactive accommodation platform with geolocation mapping and radius filters.</li>
+                            <li>Engineered advanced search algorithms for seamless local PG and services discovery.</li>
                         </ul>
                     </div>
 

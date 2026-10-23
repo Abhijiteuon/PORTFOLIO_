@@ -240,8 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const filterValue = pill.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filterValue === 'all' || category === filterValue) {
+                const categoryAttr = card.getAttribute('data-category') || '';
+                const categories = categoryAttr.split(/\s+/);
+                if (filterValue === 'all' || categories.includes(filterValue)) {
                     card.classList.remove('is-hidden');
                 } else {
                     card.classList.add('is-hidden');
