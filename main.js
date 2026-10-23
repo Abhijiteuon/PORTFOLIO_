@@ -1,442 +1,444 @@
+/**
+ * ABHIJIT KUMAR — SOFTWARE ENGINEER PORTFOLIO
+ * High-performance, clean interaction logic & ambient visual canvas
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menu Logic
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    
-    if (hamburgerBtn && hamburgerMenu) {
-        hamburgerBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            hamburgerMenu.classList.toggle('active');
-            hamburgerBtn.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!hamburgerMenu.contains(e.target) && hamburgerMenu.classList.contains('active')) {
-                hamburgerMenu.classList.remove('active');
-                hamburgerBtn.classList.remove('active');
-            }
-        });
-    }
 
-    // Theme Toggle Logic
-    const themeToggle = document.getElementById('themeToggle');
-    const iconLight = document.querySelector('.theme-icon-light');
-    const iconDark = document.querySelector('.theme-icon-dark');
+    /* ==========================================================================
+       01. THEME TOGGLE (DARK / LIGHT MODE)
+       ========================================================================== */
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme-mode') || 'theme-dark';
     
-    // Check local storage for theme preference
-    const savedTheme = localStorage.getItem('theme') || 'theme-dark';
+    // Apply initial theme
     document.body.className = savedTheme;
-    
-    if (savedTheme === 'theme-light') {
-        if (iconLight) iconLight.style.display = 'block';
-        if (iconDark) iconDark.style.display = 'none';
-    } else {
-        if (iconLight) iconLight.style.display = 'none';
-        if (iconDark) iconDark.style.display = 'block';
-    }
-    
-    if (themeToggle) {
-        themeToggle.addEventListener('click', (e) => {
-            // Close hamburger menu if it's open
-            if (hamburgerMenu && hamburgerBtn) {
-                hamburgerMenu.classList.remove('active');
-                hamburgerBtn.classList.remove('active');
-            }
 
-            if (document.body.classList.contains('theme-dark')) {
-                document.body.classList.remove('theme-dark');
-                document.body.classList.add('theme-light');
-                localStorage.setItem('theme', 'theme-light');
-                if (iconLight) iconLight.style.display = 'block';
-                if (iconDark) iconDark.style.display = 'none';
-            } else {
-                document.body.classList.remove('theme-light');
-                document.body.classList.add('theme-dark');
-                localStorage.setItem('theme', 'theme-dark');
-                if (iconLight) iconLight.style.display = 'none';
-                if (iconDark) iconDark.style.display = 'block';
-            }
-        });
-        
-        // Add custom cursor effect
-        themeToggle.addEventListener('mouseenter', () => {
-            const cursor = document.querySelector('.cursor');
-            const cursorFollower = document.querySelector('.cursor-follower');
-            if (cursor) cursor.classList.add('active');
-            if (cursorFollower) cursorFollower.classList.add('active');
-        });
-        themeToggle.addEventListener('mouseleave', () => {
-            const cursor = document.querySelector('.cursor');
-            const cursorFollower = document.querySelector('.cursor-follower');
-            if (cursor) cursor.classList.remove('active');
-            if (cursorFollower) cursorFollower.classList.remove('active');
-        });
-    }
-
-    // Custom Cursor Logic
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
-    const navLinks = document.querySelectorAll('a, .work-item, .modal-close, .hamburger-btn, .menu-action-btn, .menu-btn, .submit-btn, .logo');
-
-    // Custom Cursor Logic - Only for devices with hover capability
-    if (window.matchMedia('(hover: hover)').matches) {
-        let mouseX = 0, mouseY = 0;
-        let followerX = 0, followerY = 0;
-
-        // Follower easing function
-        function animateCursor() {
-            if (!cursor || !cursorFollower) return;
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('theme-dark');
+            const nextTheme = isDark ? 'theme-light' : 'theme-dark';
             
-            // Smooth follower
-            followerX += (mouseX - followerX) * 0.15;
-            followerY += (mouseY - followerY) * 0.15;
+            document.body.classList.remove('theme-dark', 'theme-light');
+            document.body.classList.add(nextTheme);
+            localStorage.setItem('theme-mode', nextTheme);
+        });
+    }
 
-            cursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-            cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%)`;
+    /* ==========================================================================
+       02. AMBIENT VISUAL CANVAS (INTERACTIVE CONSTELLATION)
+       ========================================================================== */
+    const canvas = document.getElementById('ambientCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
 
-            requestAnimationFrame(animateCursor);
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 25 : 50;
+        const maxDist = isMobile ? 100 : 140;
+
+        let mouse = { x: -1000, y: -1000 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.x = -1000;
+            mouse.y = -1000;
+        });
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.45;
+                this.vy = (Math.random() - 0.5) * 0.45;
+                this.radius = Math.random() * 1.5 + 0.8;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0) this.x = width;
+                else if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                else if (this.y > height) this.y = 0;
+
+                // Gentle mouse repulsion
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 120) {
+                    const force = (120 - dist) / 120;
+                    this.x += (dx / dist) * force * 1.2;
+                    this.y += (dy / dist) * force * 1.2;
+                }
+            }
+
+            draw() {
+                const isLight = document.body.classList.contains('theme-light');
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = isLight ? 'rgba(37, 99, 235, 0.4)' : 'rgba(147, 197, 253, 0.55)';
+                ctx.fill();
+            }
         }
 
-        document.addEventListener('mousemove', (e) => {
+        const particles = Array.from({ length: particleCount }, () => new Particle());
+
+        let isRunning = true;
+        const animateCanvas = () => {
+            if (!isRunning) return;
+            ctx.clearRect(0, 0, width, height);
+
+            const isLight = document.body.classList.contains('theme-light');
+            const lineColor = isLight ? 'rgba(37, 99, 235,' : 'rgba(99, 102, 241,';
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < maxDist) {
+                        const alpha = (1 - dist / maxDist) * 0.22;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `${lineColor}${alpha})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateCanvas);
+        };
+
+        requestAnimationFrame(animateCanvas);
+
+        // Pause canvas when user switches tab
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                isRunning = false;
+            } else {
+                isRunning = true;
+                requestAnimationFrame(animateCanvas);
+            }
+        });
+    }
+
+    /* ==========================================================================
+       03. AMBIENT MOUSE SPOTLIGHT (SUBTLE GLOW)
+       ========================================================================== */
+    const ambientSpotlight = document.getElementById('ambientSpotlight');
+    if (ambientSpotlight && window.matchMedia('(hover: hover)').matches) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
 
-        animateCursor();
-
-        // Hover states for cursor
-        navLinks.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                cursor.classList.add('active');
-                cursorFollower.classList.add('active');
-                
-                if (link.classList.contains('work-item')) {
-                    cursorFollower.classList.add('view-project');
-                }
-            });
-
-            link.addEventListener('mouseleave', () => {
-                cursor.classList.remove('active');
-                cursorFollower.classList.remove('active');
-                cursorFollower.classList.remove('view-project');
-            });
-        });
-        // Magnetic Button Effect
-        const magneticBtns = document.querySelectorAll('.menu-btn, .submit-btn');
-        magneticBtns.forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-                if (cursorFollower) cursorFollower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%) scale(1.5)`;
-            });
-
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = `translate(0, 0)`;
-            });
-        });
-
-        // Hero Parallax Mesh
-        const heroMesh = document.querySelector('.hero-mesh');
-        if (heroMesh) {
-            document.addEventListener('mousemove', (e) => {
-                const x = (e.clientX / window.innerWidth - 0.5) * 50;
-                const y = (e.clientY / window.innerHeight - 0.5) * 50;
-                heroMesh.style.transform = `translate(${x}px, ${y}px)`;
-            });
-        }
-    } else {
-        // Ensure cursor elements are hidden on non-hover devices
-        if (cursor) cursor.style.display = 'none';
-        if (cursorFollower) cursorFollower.style.display = 'none';
-        document.body.style.cursor = 'auto';
+        const animateSpotlight = () => {
+            currentX += (mouseX - currentX) * 0.12;
+            currentY += (mouseY - currentY) * 0.12;
+            ambientSpotlight.style.left = `${currentX}px`;
+            ambientSpotlight.style.top = `${currentY}px`;
+            requestAnimationFrame(animateSpotlight);
+        };
+        requestAnimationFrame(animateSpotlight);
     }
 
-    // Bento Grid Image Reveal Logic (Optional - if we want specialized JS handling)
-    // The current CSS handles hover scaling, so we only need JS if we want extra effects.
+    /* ==========================================================================
+       04. INTERACTIVE TERMINAL TABS & COPY
+       ========================================================================== */
+    const termTabs = document.querySelectorAll('.term-tab');
+    const termPanes = document.querySelectorAll('.term-code');
+    const copyTermBtn = document.getElementById('copyTermCodeBtn');
 
-
-    // General Modal Logic
-    // General Modal Logic
-    const modalsMap = [
-        { btn: document.getElementById('aboutNavBtnHero'), modal: document.getElementById('aboutModal') },
-        { btn: document.getElementById('resumeNavBtnHero'), modal: document.getElementById('resumeModal') },
-        { btn: document.getElementById('hireMeBtnHero'), modal: document.getElementById('callbackModal') },
-        { btn: document.getElementById('aboutNavBtn'), modal: document.getElementById('aboutModal') },
-        { btn: document.getElementById('resumeNavBtn'), modal: document.getElementById('resumeModal') },
-        { btn: document.getElementById('resumeNavBtnMenu'), modal: document.getElementById('resumeModal') },
-        { btn: document.getElementById('contactNavBtn'), modal: document.getElementById('contactModal') },
-        { btn: document.getElementById('logoBtn'), modal: document.getElementById('profilePopup') },
-        { btn: document.getElementById('openCallbackBtn'), modal: document.getElementById('callbackModal') },
-        { btn: document.getElementById('openCallbackBtnContact'), modal: document.getElementById('callbackModal') },
-        { btn: document.getElementById('openCallbackBtnMenu'), modal: document.getElementById('callbackModal') },
-        { btn: document.getElementById('openBireenaModalBtn'), modal: document.getElementById('bireenaCertModal') },
-        { btn: document.getElementById('openBireenaModalBtn2'), modal: document.getElementById('bireenaCertModal') },
-        { btn: document.getElementById('openGenosparkModalBtn'), modal: document.getElementById('genosparkCertModal') },
-        { btn: document.getElementById('openGenosparkModalBtn2'), modal: document.getElementById('genosparkCertModal') }
-    ];
-
-    // First setup all buttons to open their respective modals
-    modalsMap.forEach(({btn, modal}) => {
-        if(btn && modal) {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // Close hamburger menu if it was clicked from inside
-                if (btn.closest('.hamburger-dropdown')) {
-                    const hMenu = document.getElementById('hamburgerMenu');
-                    const hBtn = document.getElementById('hamburgerBtn');
-                    if (hMenu) hMenu.classList.remove('active');
-                    if (hBtn) hBtn.classList.remove('active');
-                }
-
-                // close other open modals first
-                document.querySelectorAll('.about-modal.active').forEach(m => m.classList.remove('active'));
-                
-                modal.classList.add('active');
-            });
-        }
-    });
-
-    // Then setup the close logic ONLY ONCE per modal
-    const uniqueModals = [...new Set(modalsMap.map(m => m.modal).filter(Boolean))];
-    uniqueModals.forEach(modal => {
-        const closeBtn = modal.querySelector('.modal-close');
-        const overlay = modal.querySelector('.modal-overlay');
-        
-        const closeModal = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = ''; // Unlock scroll
-        };
-
-        if (closeBtn) {
-            closeBtn.addEventListener('click', closeModal);
-        }
-
-        if (overlay) {
-            overlay.addEventListener('click', closeModal);
-        }
-    });
-
-    // Body scroll lock trigger
-    modalsMap.forEach(({btn, modal}) => {
-        if(btn && modal) {
-            btn.addEventListener('click', () => {
-                if (modal.classList.contains('active')) {
-                    document.body.style.overflow = 'hidden'; // Lock scroll
-                }
-            });
-        }
-    });
-
-    // Simple Intersection Observer for scroll animations
-    const revealElements = document.querySelectorAll('.reveal-text, .reveal-fade');
-    
-    // Wrap content only if it hasn't been wrapped already
-    document.querySelectorAll('.reveal-text:not(.hero-title)').forEach(el => {
-        if (!el.querySelector('.line')) {
-            const content = el.innerHTML;
-            el.innerHTML = `<span class="line"><span>${content}</span></span>`;
-        }
-    });
-
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    revealElements.forEach(el => {
-        observer.observe(el);
-    });
-    
-    // --- Real Visit Counter Implementation ---
-    const VISIT_API_URL = 'https://api.counterapi.dev/v1/abhijit-portfolio/visits';
-
-    async function initVisitCounter() {
-        const viewsDisplay = document.getElementById('profile-views-count');
-        if (!viewsDisplay) return;
-
-        try {
-            // Increment and fetch the count
-            const response = await fetch(`${VISIT_API_URL}/up`);
-            const data = await response.json();
+    termTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetId = `pane-${tab.getAttribute('data-tab')}`;
             
-            if (data && data.count) {
-                animateValue(viewsDisplay, 0, data.count, 2000);
-            }
-        } catch (error) {
-            console.error('Failed to fetch visit count:', error);
-            // Fallback to static or zero if API fails
-            viewsDisplay.textContent = '0';
-        }
+            termTabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            termPanes.forEach(p => p.classList.remove('active'));
+
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            const activePane = document.getElementById(targetId);
+            if (activePane) activePane.classList.add('active');
+        });
+    });
+
+    if (copyTermBtn) {
+        copyTermBtn.addEventListener('click', () => {
+            const activeCode = document.querySelector('.term-code.active');
+            if (!activeCode) return;
+
+            navigator.clipboard.writeText(activeCode.innerText).then(() => {
+                copyTermBtn.innerHTML = `
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                `;
+                setTimeout(() => {
+                    copyTermBtn.innerHTML = `
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    `;
+                }, 2000);
+            }).catch(err => {
+                console.error('Could not copy terminal snippet:', err);
+            });
+        });
     }
 
-    // Smooth counting animation for stats
-    function animateValue(obj, start, end, duration) {
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    }
+    /* ==========================================================================
+       05. PROJECT CATEGORY FILTER TABS
+       ========================================================================== */
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    // Call the counter on load
-    initVisitCounter();
+    filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            filterPills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
 
-    // Callback Form Logic
-    const reasonSelect = document.getElementById('cb-reason');
-    const otherGroup = document.getElementById('otherReasonGroup');
-    const otherInput = document.getElementById('cb-other');
-    const charCount = document.querySelector('.char-count');
-    const callbackForm = document.getElementById('callbackForm');
+            const filterValue = pill.getAttribute('data-filter');
 
-    if (reasonSelect && otherGroup && otherInput) {
-        reasonSelect.addEventListener('change', (e) => {
-            if (e.target.value === 'other') {
-                otherGroup.classList.remove('hidden');
-                otherInput.setAttribute('required', 'true');
-            } else {
-                otherGroup.classList.add('hidden');
-                otherInput.removeAttribute('required');
-                otherInput.value = '';
-                charCount.textContent = '0 / 64';
-            }
-        });
-
-        otherInput.addEventListener('input', (e) => {
-            const currentLength = e.target.value.length;
-            charCount.textContent = `${currentLength} / 64`;
-        });
-        
-        if (callbackForm) {
-            callbackForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const formData = new FormData(callbackForm);
-                
-                fetch(callbackForm.action, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        // Close modal and reset
-                        const modal = document.getElementById('callbackModal');
-                        if(modal) {
-                            modal.classList.remove('active');
-                        }
-                        callbackForm.reset();
-                        otherGroup.classList.add('hidden');
-                        if (charCount) charCount.textContent = '0 / 64';
-                        const msgCharCount = document.getElementById('msgCharCount');
-                        if (msgCharCount) msgCharCount.textContent = '0 / 50';
-                        alert('Callback request submitted successfully! Your message will reach me via Formspree.');
-                    } else {
-                        response.json().then(data => {
-                            if (Object.hasOwn(data, 'errors')) {
-                                alert(data["errors"].map(error => error["message"]).join(", "));
-                            } else {
-                                alert("Oops! There was a problem submitting your form");
-                            }
-                        })
-                    }
-                })
-                .catch((error) => {
-                    console.error('Form submission error:', error);
-                    alert('Oops! There was an error submitting your request. Please try again later.');
-                });
-
-                const msgInput = document.getElementById('cb-message');
-                const msgCharCount = document.getElementById('msgCharCount');
-                if (msgInput && msgCharCount) {
-                    msgInput.addEventListener('input', (e) => {
-                        msgCharCount.textContent = `${e.target.value.length} / 50`;
-                    });
+            projectCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.classList.remove('is-hidden');
+                } else {
+                    card.classList.add('is-hidden');
                 }
             });
-        }
-    }
+        });
+    });
 
-    // Initial trigger for hero items and viewport safety
-    const triggerInitialReveals = () => {
-        // Reveal hero elements with staggered delay
-        document.querySelectorAll('.hero .reveal-text, .hero .reveal-fade').forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add('is-revealed');
-            }, 100 + (index * 150));
+    /* ==========================================================================
+       06. MOBILE DRAWER NAVIGATION
+       ========================================================================== */
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileDrawer) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = mobileDrawer.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active', isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        // Safety fallback: reveal EVERYTHING after 4 seconds if they are still hidden
-        setTimeout(() => {
-            document.querySelectorAll('.reveal-text:not(.is-revealed), .reveal-fade:not(.is-revealed)').forEach(el => {
-                console.warn('Revealing element via fallback:', el);
-                el.classList.add('is-revealed');
+        // Close on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
-        }, 3000);
+        });
+
+        // Close on outside click
+        document.addEventListener('click', (e) => {
+            if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileDrawer.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    /* ==========================================================================
+       07. DOCK ACTIVE LINK OBSERVER
+       ========================================================================== */
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.dock-links .nav-item');
+
+    const updateActiveNav = () => {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 200;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${currentSectionId}`) {
+                item.classList.add('active');
+            }
+        });
     };
 
-    if (document.readyState === 'complete') {
-        triggerInitialReveals();
-    } else {
-        window.addEventListener('load', triggerInitialReveals);
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    /* ==========================================================================
+       08. MODAL DIALOG CONTROLLER
+       ========================================================================== */
+    const modals = {
+        hire: document.getElementById('callbackModal'),
+        genospark: document.getElementById('genosparkCertModal'),
+        bireena: document.getElementById('bireenaCertModal'),
+        resume: document.getElementById('resumeModal')
+    };
+
+    const openModal = (modal) => {
+        if (!modal) return;
+        // Close other modals
+        Object.values(modals).forEach(m => m && m.classList.remove('active'));
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // Close mobile drawer if active
+        if (mobileDrawer) {
+            mobileDrawer.classList.remove('active');
+            mobileMenuBtn && mobileMenuBtn.classList.remove('active');
+        }
+    };
+
+    const closeModal = (modal) => {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    // Close on backdrop or close button
+    document.querySelectorAll('.modern-modal').forEach(modal => {
+        const backdrop = modal.querySelector('.modal-backdrop');
+        const closeBtn = modal.querySelector('.modal-close-btn');
+
+        if (backdrop) backdrop.addEventListener('click', () => closeModal(modal));
+        if (closeBtn) closeBtn.addEventListener('click', () => closeModal(modal));
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            Object.values(modals).forEach(m => m && closeModal(m));
+        }
+    });
+
+    // Triggers for Hire Me Modal
+    const hireTriggers = [
+        document.getElementById('openHireModalBtn'),
+        document.getElementById('openHireModalMobileBtn'),
+        document.getElementById('openHireFormSectionBtn')
+    ];
+    hireTriggers.forEach(btn => {
+        if (btn) btn.addEventListener('click', () => openModal(modals.hire));
+    });
+
+    // Triggers for Genospark Modal
+    const genoTriggers = [
+        document.getElementById('openGenosparkModalBtn'),
+        document.getElementById('openGenosparkModalBtn2')
+    ];
+    genoTriggers.forEach(btn => {
+        if (btn) btn.addEventListener('click', () => openModal(modals.genospark));
+    });
+
+    // Triggers for Bireena Modal
+    const bireenaTriggers = [
+        document.getElementById('openBireenaModalBtn'),
+        document.getElementById('openBireenaModalBtn2')
+    ];
+    bireenaTriggers.forEach(btn => {
+        if (btn) btn.addEventListener('click', () => openModal(modals.bireena));
+    });
+
+    // Trigger for Resume Modal
+    const resumeTrigger = document.getElementById('resumeModalTrigger');
+    if (resumeTrigger) {
+        resumeTrigger.addEventListener('click', () => openModal(modals.resume));
     }
-    // Google Form Submission Handler
-    const googleForm = document.getElementById('googleHireMeForm');
-    const successOverlay = document.getElementById('formSuccessMessage');
+
+    // Success overlay dismiss
+    const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+    if (closeSuccessBtn) {
+        closeSuccessBtn.addEventListener('click', () => {
+            const successScreen = document.getElementById('formSuccessMessage');
+            if (successScreen) successScreen.style.display = 'none';
+            closeModal(modals.hire);
+        });
+    }
+
+    /* ==========================================================================
+       09. URGENCY SLIDER FEEDBACK
+       ========================================================================== */
     const urgencySlider = document.getElementById('gh-urgency');
     const urgencyValue = document.getElementById('urgencyValue');
     
     const urgencyLabels = {
-        1: 'Very Low', 2: 'Low', 3: 'Minor', 4: 'Casual', 
-        5: 'Normal', 6: 'Moderate', 7: 'High', 8: 'Urgent', 
-        9: 'Critical', 10: 'Immediate'
+        1: '1 · Relaxed',
+        2: '2 · Low Priority',
+        3: '3 · Flexible',
+        4: '4 · Standard',
+        5: '5 · Normal',
+        6: '6 · Priority',
+        7: '7 · Expedited',
+        8: '8 · High Velocity',
+        9: '9 · Critical',
+        10: '10 · Immediate'
     };
 
     if (urgencySlider && urgencyValue) {
         urgencySlider.addEventListener('input', (e) => {
             const val = e.target.value;
-            urgencyValue.textContent = `${val} - ${urgencyLabels[val]}`;
+            urgencyValue.textContent = urgencyLabels[val] || `${val} · Custom`;
         });
     }
+
+    /* ==========================================================================
+       10. GOOGLE FORM DISPATCH HANDLER
+       ========================================================================== */
+    const googleForm = document.getElementById('googleHireMeForm');
+    const successScreen = document.getElementById('formSuccessMessage');
 
     if (googleForm) {
         googleForm.addEventListener('submit', () => {
             const submitBtn = googleForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            submitBtn.textContent = 'SENDING...';
-            submitBtn.disabled = true;
+            const originalHTML = submitBtn.innerHTML;
 
-            // Since we target a hidden iframe, the page won't reload.
-            // We show the success UI after a brief delay to ensure the request is sent.
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Transmitting brief...</span>`;
+
+            // Since it targets hidden iframe, handle success UI after short timeout
             setTimeout(() => {
-                successOverlay.style.display = 'flex';
+                if (successScreen) successScreen.style.display = 'flex';
                 googleForm.reset();
-                if (urgencyValue) urgencyValue.textContent = '5 - Normal';
-                
-                submitBtn.innerHTML = originalBtnText;
+                if (urgencyValue) urgencyValue.textContent = '5 · Normal';
                 submitBtn.disabled = false;
-            }, 1000);
+                submitBtn.innerHTML = originalHTML;
+            }, 900);
         });
     }
+
 });

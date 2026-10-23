@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhijit Kumar | Software Engineer</title>
-    <meta name="description" content="Professional Portfolio of Abhijit Kumar, Software Engineer">
-    <link rel="stylesheet" href="index.css">
+    <meta name="description" content="Portfolio of Abhijit Kumar, Software Engineer. Specializing in backend systems, high-performance web platforms, and data-driven applications.">
+    <meta name="keywords" content="Abhijit Kumar, Software Engineer, Full Stack Developer, Java, Python, C, React, Spring Boot, MySQL">
+    <meta name="author" content="Abhijit Kumar">
     
-    <!-- Google Analytics (GA4) - Replace G-XXXXXXXXXX with your Tracking ID -->
-    <!-- Place this code at the top of the <head> for best results -->
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Abhijit Kumar | Software Engineer">
+    <meta property="og:description" content="Software Engineer building scalable backend systems, analytics platforms, and crafted web interfaces.">
+    <meta property="og:image" content="profile.jpg">
+
+    <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -16,72 +30,1137 @@
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="theme-dark">
-    <header class="top-nav">
-        <div class="nav-container">
-            <button class="logo" id="logoBtn" aria-label="View Profile">AK</button>
-            <div class="nav-links">
-                <!-- Hamburger Menu moved here -->
-                <div class="hamburger-menu" id="hamburgerMenu">
-                    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                        <span class="hamburger-line"></span>
-                    </button>
-                    <div class="hamburger-dropdown" id="hamburgerDropdown">
-                        <button id="themeToggle" class="menu-action-btn" aria-label="Switch Theme">
-                            <span class="theme-icon-light"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
-                            <span class="theme-icon-dark"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
-                            <span>Theme</span>
-                        </button>
-                        <button id="openCallbackBtnMenu" class="menu-action-btn" aria-label="Request Callback">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.19-1.16a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.92z"></path></svg>
-                            <span>Callback</span>
-                        </button>
-                        <button id="resumeNavBtnMenu" class="menu-action-btn" aria-label="View Resume">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                            <span>Resume</span>
-                        </button>
-                        <a href="cv.html" class="menu-action-btn" aria-label="Printable CV" target="_blank" style="text-decoration: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M10 8h4"/><path d="M10 12h4"/><path d="M10 16h4"/></svg>
-                            <span>Printable CV (PDF)</span>
-                        </a>
-                    </div>
+    <!-- Ambient Canvas & Background Grid -->
+    <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="ambient-aurora" aria-hidden="true"></div>
+    <div class="ambient-spotlight" id="ambientSpotlight" aria-hidden="true"></div>
+
+    <!-- Floating Island Navigation Bar -->
+    <header class="dock-header">
+        <nav class="dock-nav" aria-label="Main Navigation">
+            <a href="#hero" class="dock-brand" aria-label="Abhijit Kumar Home">
+                <span class="brand-monogram">AK</span>
+                <span class="brand-badge">
+                    <span class="status-dot"></span>
+                    <span class="badge-text">Available</span>
+                </span>
+            </a>
+
+            <div class="dock-links">
+                <a href="#work" class="nav-item">Work</a>
+                <a href="#experience" class="nav-item">Experience</a>
+                <a href="#stack" class="nav-item">Stack</a>
+                <a href="#credentials" class="nav-item">Credentials</a>
+                <a href="#about" class="nav-item">About</a>
+            </div>
+
+            <div class="dock-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle visual theme" title="Toggle theme">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <a href="cv.html" target="_blank" class="dock-btn secondary-btn" aria-label="View printable CV">
+                    <span>CV</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+
+                <button id="openHireModalBtn" class="dock-btn primary-btn" aria-label="Initiate contact">
+                    <span>Get in Touch</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer -->
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer-inner">
+                <a href="#work" class="mobile-nav-link">Work</a>
+                <a href="#experience" class="mobile-nav-link">Experience</a>
+                <a href="#stack" class="mobile-nav-link">Stack</a>
+                <a href="#credentials" class="mobile-nav-link">Credentials</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <div class="mobile-drawer-actions">
+                    <a href="cv.html" target="_blank" class="dock-btn secondary-btn w-full">Printable CV (PDF)</a>
+                    <button id="openHireModalMobileBtn" class="dock-btn primary-btn w-full">Initiate Contact</button>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="app-layout">
-        <!-- Hero Section (Full Width) -->
-        <section class="feed-card hero hero-section">
-            <div class="hero-mesh">
-                <div class="mesh-ball"></div>
-                <div class="mesh-ball"></div>
-                <div class="mesh-ball"></div>
-                <div class="mesh-ball"></div>
-            </div>
-            <div class="card-body hero-content">
-                <h1 class="hero-title reveal-text">
-                    <span class="line"><span>ABHIJIT</span></span>
-                    <span class="line"><span>KUMAR.</span></span>
-                </h1>
-                <p class="hero-subtitle reveal-text delay-1">
-                    B.TECH SOFTWARE ENGINEER. DEVELOPING SOLUTIONS FOR REAL-WORLD CHALLENGES.
-                </p>
-                <div class="hero-actions reveal-fade delay-2">
-                    <div class="hero-secondary-row">
-                        <button class="menu-btn" id="aboutNavBtnHero">EXPLORE PROFILE</button>
-                        <button class="menu-btn" id="resumeNavBtnHero">VIEW RESUME</button>
+    <!-- Main Container -->
+    <main class="page-wrapper">
+
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-main-col">
+                    <div class="hero-eyebrow">
+                        <div class="shimmer-pill">
+                            <span class="pulse-indicator"></span>
+                            <span class="pill-text">Software Engineer &middot; B.Tech CSE '28 &middot; Greater Noida</span>
+                        </div>
                     </div>
-                    <button class="menu-btn primary-action-large" id="hireMeBtnHero">
-                        <span>HIRE ME</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 10px; transition: transform 0.3s ease;">
+
+                    <h1 class="hero-headline">
+                        Engineering scalable systems &amp; <span class="gradient-text">high-precision</span> interfaces.
+                    </h1>
+
+                    <p class="hero-description">
+                        I'm <strong class="text-white">Abhijit Kumar</strong>, a software engineer with hands-on production experience architecting analytics platforms, live database pipelines, and high-performance web systems.
+                    </p>
+
+                    <div class="hero-cta-cluster">
+                        <a href="#work" class="action-btn primary-action">
+                            <span>Explore Selected Work</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <polyline points="19 12 12 19 5 12"></polyline>
+                            </svg>
+                        </a>
+                        <button id="resumeModalTrigger" class="action-btn secondary-action">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                            <span>Resume &amp; Bio</span>
+                        </button>
+                        <a href="https://github.com/Abhijiteuon" target="_blank" rel="noopener noreferrer" class="action-btn icon-only-action" aria-label="GitHub Profile">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" rel="noopener noreferrer" class="action-btn icon-only-action" aria-label="LinkedIn Profile">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Tech Focus Pills -->
+                    <div class="hero-focus-tags">
+                        <span class="focus-chip">Backend Architecture</span>
+                        <span class="focus-chip">MySQL &amp; Prisma ORM</span>
+                        <span class="focus-chip">Spring Boot &amp; Java</span>
+                        <span class="focus-chip">Modern TypeScript / React</span>
+                        <span class="focus-chip">C &amp; Algorithms</span>
+                    </div>
+                </div>
+
+                <!-- Interactive Engineering Cockpit Terminal -->
+                <div class="hero-terminal-col">
+                    <div class="code-terminal border-beam" id="engineerTerminal">
+                        <div class="terminal-bar">
+                            <div class="terminal-controls">
+                                <span class="ctrl-dot red"></span>
+                                <span class="ctrl-dot yellow"></span>
+                                <span class="ctrl-dot green"></span>
+                            </div>
+                            <div class="terminal-tabs" role="tablist">
+                                <button class="term-tab active" data-tab="config" role="tab" aria-selected="true">abhijit.config.ts</button>
+                                <button class="term-tab" data-tab="internships" role="tab" aria-selected="false">experience.log</button>
+                                <button class="term-tab" data-tab="diagnostics" role="tab" aria-selected="false">stack.json</button>
+                            </div>
+                            <button class="term-copy-btn" id="copyTermCodeBtn" title="Copy code" aria-label="Copy terminal content">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="terminal-content">
+                            <!-- Tab 1: Config -->
+                            <pre class="term-code active" id="pane-config"><code><span class="t-kw">export const</span> <span class="t-var">engineer</span> = {
+  <span class="t-prop">name</span>: <span class="t-str">"Abhijit Kumar"</span>,
+  <span class="t-prop">status</span>: <span class="t-str">"Open to Software Development and Full Stack Development Roles"</span>,
+  <span class="t-prop">education</span>: {
+    <span class="t-prop">degree</span>: <span class="t-str">"B.Tech in Computer Science"</span>,
+    <span class="t-prop">institution</span>: <span class="t-str">"Mangalmay Institute (AKTU)"</span>,
+    <span class="t-prop">cohort</span>: <span class="t-str">"2024 — 2028"</span>
+  },
+  <span class="t-prop">coreCompetencies</span>: [
+    <span class="t-str">"Distributed Architecture &amp; OOP"</span>,
+    <span class="t-str">"Full-Stack Performance Optimization"</span>,
+    <span class="t-str">"Prisma &amp; Relational Schema Design"</span>,
+    <span class="t-str">"Modern Interactive UI Systems"</span>
+  ],
+  <span class="t-prop">contact</span>: <span class="t-str">"work.abhijit.27@gmail.com"</span>
+};</code></pre>
+
+                            <!-- Tab 2: Internships -->
+                            <pre class="term-code" id="pane-internships"><code><span class="t-comment">// Verified Professional Milestones</span>
+[2026-08-31] <span class="t-str">Genospark Innovative Solutions</span>
+  &rarr; Role: Full Stack Development Intern
+  &rarr; Credential ID: <span class="t-hl">2026I10047</span> (Verified Online)
+  &rarr; Shipped: GenoSpark EMS Student Dashboard
+  &rarr; Stack: MySQL, Prisma Schema, Analytics UI
+
+[2026-08-30] <span class="t-str">Bireena Info Tech Co.</span>
+  &rarr; Role: Full Stack Developer Intern
+  &rarr; Credential ID: <span class="t-hl">BR2K26FSD031</span> (ISO 9001:2015)
+  &rarr; Shipped: NGO Web Platform &amp; Admin Ops
+  &rarr; Citation: Outstanding Delivery &amp; Problem Solving</code></pre>
+
+                            <!-- Tab 3: Diagnostics -->
+                            <pre class="term-code" id="pane-diagnostics"><code>{
+  <span class="t-prop">"languages"</span>: [<span class="t-str">"C"</span>, <span class="t-str">"Java"</span>, <span class="t-str">"Python"</span>, <span class="t-str">"JavaScript"</span>, <span class="t-str">"C++"</span>],
+  <span class="t-prop">"frameworks"</span>: [<span class="t-str">"Spring Boot"</span>, <span class="t-str">"React"</span>, <span class="t-str">"Tailwind CSS"</span>],
+  <span class="t-prop">"databases"</span>: [<span class="t-str">"MySQL"</span>, <span class="t-str">"Prisma ORM"</span>, <span class="t-str">"SQLite"</span>],
+  <span class="t-prop">"analytics"</span>: [<span class="t-str">"Power BI (TestDome Silver)"</span>],
+  <span class="t-prop">"toolchain"</span>: [<span class="t-str">"Git"</span>, <span class="t-str">"VS Code"</span>, <span class="t-str">"Linux"</span>, <span class="t-str">"REST APIs"</span>],
+  <span class="t-prop">"verifiedIntegrity"</span>: <span class="t-hl">true</span>
+}</code></pre>
+                        </div>
+                        <div class="terminal-footer">
+                            <span class="term-status-text"><span class="dot-live"></span> Node v20.14.0 &middot; Ready</span>
+                            <span class="term-meta">Switch tabs to view details</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: SELECTED WORK -->
+        <section class="section-block" id="work">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <span class="section-tag">// 01 &middot; PORTFOLIO</span>
+                    <h2 class="section-heading">Selected Work &amp; Production Systems</h2>
+                </div>
+                <p class="section-subtext">
+                    Engineered web applications, data platforms, and secure systems built with architectural clarity and craftsmanship.
+                </p>
+            </div>
+
+            <!-- Project Category Filter Tabs -->
+            <div class="project-filter-bar">
+                <button class="filter-pill active" data-filter="all">All Projects</button>
+                <button class="filter-pill" data-filter="fullstack">Full Stack</button>
+                <button class="filter-pill" data-filter="backend">Backend &amp; Security</button>
+                <button class="filter-pill" data-filter="analytics">Data &amp; Platforms</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                
+                <!-- Project 1: Student Dashboard -->
+                <article class="project-card spotlight-card border-beam-hover" data-category="fullstack">
+                    <div class="project-mockup-frame">
+                        <div class="browser-chrome">
+                            <span class="chrome-dot red-dot"></span>
+                            <span class="chrome-dot yellow-dot"></span>
+                            <span class="chrome-dot green-dot"></span>
+                            <div class="chrome-address">student-dashboard-sage.vercel.app</div>
+                        </div>
+                        <div class="mockup-ui mockup-student-dash">
+                            <div class="ui-mockup-top">
+                                <span class="ui-pill">EMS Analytics Suite</span>
+                                <span class="ui-badge-live">PRODUCTION PORTAL</span>
+                            </div>
+                            <div class="mockup-module-bar">
+                                <span class="mod-tab active">Overview</span>
+                                <span class="mod-tab">Accuracy Tracking</span>
+                                <span class="mod-tab">Prisma Schema</span>
+                            </div>
+                            <div class="mockup-feature-rows">
+                                <div class="feature-item">
+                                    <span class="feature-dot active"></span>
+                                    <span class="feature-name">User-Scoped Query Cache</span>
+                                    <span class="feature-status">MySQL Integrated</span>
+                                </div>
+                                <div class="feature-item">
+                                    <span class="feature-dot active"></span>
+                                    <span class="feature-name">Dynamic Accuracy Curve</span>
+                                    <span class="feature-status">Real-Time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-badge">Production EMS</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">Student Analytics &amp; Performance Dashboard</h3>
+                        <p class="project-desc">
+                            High-performance student performance analytics portal built during Genospark internship. Features discrete question attempts, 1st-Attempt Accuracy Curves, and responsive data visualization.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Analytics API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://student-dashboard-sage.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: College Compass -->
+                <article class="project-card spotlight-card border-beam-hover" data-category="analytics">
+                    <div class="project-mockup-frame">
+                        <div class="browser-chrome">
+                            <span class="chrome-dot red-dot"></span>
+                            <span class="chrome-dot yellow-dot"></span>
+                            <span class="chrome-dot green-dot"></span>
+                            <div class="chrome-address">college-compass-iota.vercel.app</div>
+                        </div>
+                        <div class="mockup-ui mockup-college">
+                            <div class="ui-mockup-top">
+                                <span class="ui-pill">Admissions Ledger</span>
+                                <span class="ui-badge-live">VERIFIED DATABASE</span>
+                            </div>
+                            <div class="ui-mockup-table">
+                                <div class="table-row table-hdr">
+                                    <span>Institution Tier</span>
+                                    <span>Cutoff Criterion</span>
+                                    <span>Outcome Ledger</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="inst-name">Premier Technical Institutes</span>
+                                    <span class="tag-accent">Rank 1 — 500</span>
+                                    <span class="tag-success">Verified Placements</span>
+                                </div>
+                                <div class="table-row">
+                                    <span class="inst-name">State University Centers</span>
+                                    <span class="tag-accent">Rank 500 — 2500</span>
+                                    <span class="tag-success">Verified Placements</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-badge">Compensation Intelligence</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">College Compass &middot; Admissions Platform</h3>
+                        <p class="project-desc">
+                            Comprehensive institutional discovery platform. Organizes cutoff benchmarks, verified placement records, and compensation intelligence into an actionable ledger.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">Data Architecture</span>
+                            <span class="tech-tag">JavaScript ES6</span>
+                            <span class="tech-tag">CSS Grid System</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://college-compass-iota.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: She Can Foundation -->
+                <article class="project-card spotlight-card border-beam-hover" data-category="fullstack">
+                    <div class="project-mockup-frame">
+                        <div class="browser-chrome">
+                            <span class="chrome-dot red-dot"></span>
+                            <span class="chrome-dot yellow-dot"></span>
+                            <span class="chrome-dot green-dot"></span>
+                            <div class="chrome-address">she-can-foundation-app.vercel.app</div>
+                        </div>
+                        <div class="mockup-ui mockup-foundation">
+                            <div class="ui-mockup-top">
+                                <span class="ui-pill">NGO Community Portal</span>
+                                <span class="ui-badge-live">OUTREACH PLATFORM</span>
+                            </div>
+                            <div class="foundation-program-cards">
+                                <div class="prog-card">
+                                    <span class="prog-tag">Initiative</span>
+                                    <span class="prog-title">Digital Literacy Workshops</span>
+                                </div>
+                                <div class="prog-card">
+                                    <span class="prog-tag">Campaign</span>
+                                    <span class="prog-title">Community Mentorship Outreach</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-badge">Full Stack NGO Portal</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">She Can Foundation &middot; Community Platform</h3>
+                        <p class="project-desc">
+                            Interactive community empowerment platform built to drive foundation campaigns, volunteer operations, transparent donor engagement, and impact reporting.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Modern Web API</span>
+                            <span class="tech-tag">Responsive UX</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://she-can-foundation-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: TaskMaster PHP System -->
+                <article class="project-card spotlight-card border-beam-hover" data-category="backend">
+                    <div class="project-mockup-frame">
+                        <div class="browser-chrome">
+                            <span class="chrome-dot red-dot"></span>
+                            <span class="chrome-dot yellow-dot"></span>
+                            <span class="chrome-dot green-dot"></span>
+                            <div class="chrome-address">abhijit-euon.free.nf</div>
+                        </div>
+                        <div class="mockup-ui mockup-terminal-app">
+                            <div class="term-line"><span class="prompt">$</span> auth_service --verify-bcrypt</div>
+                            <div class="term-line success">&check; [SECURITY] Bcrypt rounds=12 &middot; XSS sanitizer active</div>
+                            <div class="term-line"><span class="prompt">$</span> db_status --engine=sqlite3</div>
+                            <div class="term-line info">&bull; Connection pool established (0 config, transactional)</div>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-badge">Backend Architecture</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">TaskMaster &middot; Hardened PHP Management System</h3>
+                        <p class="project-desc">
+                            Engineered with core backend security patterns: zero-configuration SQLite transactional layer, Bcrypt password hashing, session hardening, and XSS/CSRF mitigation.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">PHP 8</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Security Engineering</span>
+                            <span class="tech-tag">Bcrypt</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://abhijit-euon.free.nf/" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 5: UPI Payment Interface -->
+                <article class="project-card spotlight-card border-beam-hover" data-category="fullstack">
+                    <div class="project-mockup-frame">
+                        <div class="browser-chrome">
+                            <span class="chrome-dot red-dot"></span>
+                            <span class="chrome-dot yellow-dot"></span>
+                            <span class="chrome-dot green-dot"></span>
+                            <div class="chrome-address">upi-payment-app-puce.vercel.app</div>
+                        </div>
+                        <div class="mockup-ui mockup-upi">
+                            <div class="upi-card">
+                                <div class="upi-head">
+                                    <span>Peer-to-Peer Transfer</span>
+                                    <span class="upi-tag">UPI 2.0</span>
+                                </div>
+                                <div class="upi-state-indicator">
+                                    <span class="state-pulse"></span>
+                                    <span>Instant Transaction Pathway</span>
+                                </div>
+                                <div class="upi-status">&check; Encrypted Virtual Payment Address Verified</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta-row">
+                            <span class="project-badge">Fintech UX System</span>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <h3 class="project-title">UPI Payment &middot; Transaction Flow Experience</h3>
+                        <p class="project-desc">
+                            High-velocity fintech checkout prototype engineered with instantaneous state feedback, dynamic virtual address validation, and tactile mobile-responsive interactions.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">State Management</span>
+                            <span class="tech-tag">Mobile UX</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://upi-payment-app-puce.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SECTION: ENGINEERING EXPERIENCE -->
+        <section class="section-block" id="experience">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <span class="section-tag">// 02 &middot; TRACK RECORD</span>
+                    <h2 class="section-heading">Professional Experience &amp; Internships</h2>
+                </div>
+                <p class="section-subtext">
+                    Hands-on software engineering internships delivering production analytics, database schema optimizations, and customer-facing web platforms.
+                </p>
+            </div>
+
+            <div class="timeline-wrapper">
+                <!-- Timeline Item 1: Genospark -->
+                <div class="timeline-item">
+                    <div class="timeline-indicator">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content-card spotlight-card border-beam-hover">
+                        <div class="timeline-top">
+                            <div>
+                                <span class="exp-period">06 July 2026 &mdash; 31 August 2026 &middot; Remote</span>
+                                <h3 class="exp-role">Full Stack Development Intern</h3>
+                                <div class="exp-company">
+                                    <strong>Genospark Innovative Solutions Pvt. Ltd.</strong>
+                                </div>
+                            </div>
+                            <div class="exp-badge-group">
+                                <span class="cred-chip">ID: 2026I10047</span>
+                                <span class="cred-chip-verified">&check; Verified</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-body">
+                            <ul class="exp-bullet-list">
+                                <li>
+                                    <strong>Engineered Production Analytics Portal:</strong> Spearheaded the development of the GenoSpark EMS Student Dashboard Module, migrating early prototype components into a high-concurrency, full-width performance portal.
+                                </li>
+                                <li>
+                                    <strong>Database &amp; Schema Architecture:</strong> Structured live user-scoped database integrations with <strong>MySQL</strong> and executed <strong>Prisma schema</strong> alterations to record discrete question attempts and calculate real-time 1st-Attempt Accuracy Curves.
+                                </li>
+                                <li>
+                                    <strong>Glassmorphism UI &amp; DOU Tracking:</strong> Crafted modern responsive UI components including an anchored floating glass horizontal tab bar beneath the Profile Hero Banner, and contributed to Anonymous Tracking Daily Operations Architecture.
+                                </li>
+                            </ul>
+
+                            <div class="exp-action-row">
+                                <button class="btn-sm btn-outline" id="openGenosparkModalBtn">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    <span>Preview Certificate</span>
+                                </button>
+
+                                <a href="https://genospark.in/employee-verification" target="_blank" rel="noopener noreferrer" class="btn-sm btn-accent">
+                                    <span>Verify Online (genospark.in)</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+
+                                <a href="Genospark_Internship_Certificate.pdf" target="_blank" class="btn-sm btn-subtle">
+                                    <span>Download PDF</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: Bireena -->
+                <div class="timeline-item">
+                    <div class="timeline-indicator">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-line"></div>
+                    </div>
+                    <div class="timeline-content-card spotlight-card border-beam-hover">
+                        <div class="timeline-top">
+                            <div>
+                                <span class="exp-period">01 July 2026 &mdash; 30 August 2026 &middot; 2 Months</span>
+                                <h3 class="exp-role">Full Stack Developer Intern</h3>
+                                <div class="exp-company">
+                                    <strong>Bireena Info Tech Co.</strong>
+                                </div>
+                            </div>
+                            <div class="exp-badge-group">
+                                <span class="cred-chip">ID: BR2K26FSD031</span>
+                                <span class="cred-chip-verified">ISO 9001:2015 Recognized</span>
+                            </div>
+                        </div>
+
+                        <div class="exp-body">
+                            <ul class="exp-bullet-list">
+                                <li>
+                                    <strong>Enduring Welfare Organisation NGO:</strong> Developed a responsive full-stack platform and administrative operations system for the NGO, enabling community outreach, volunteer coordination, and initiative management.
+                                </li>
+                                <li>
+                                    <strong>Commercial Web Architecture:</strong> Architected and delivered a responsive e-commerce presentation platform for <strong>Soohagan Silk</strong> with interactive product galleries and streamlined inquiry pathways.
+                                </li>
+                                <li>
+                                    <strong>Distinction in Execution:</strong> Completed the rigorous 2-month engineering program with an official citation for outstanding technical execution, analytical velocity, and team collaboration.
+                                </li>
+                            </ul>
+
+                            <div class="exp-action-row">
+                                <button class="btn-sm btn-outline" id="openBireenaModalBtn">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                    <span>Preview Certificate</span>
+                                </button>
+
+                                <a href="Bireena_Internship_Certificate.pdf" target="_blank" class="btn-sm btn-subtle">
+                                    <span>Download PDF</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION: TECHNICAL STACK -->
+        <section class="section-block" id="stack">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <span class="section-tag">// 03 &middot; TOOLCHAIN</span>
+                    <h2 class="section-heading">Technical Stack &amp; Capabilities</h2>
+                </div>
+                <p class="section-subtext">
+                    Core programming languages, database engines, and frameworks utilized across production and academic development.
+                </p>
+            </div>
+
+            <div class="skills-matrix">
+                <!-- Group 1: Core Languages -->
+                <div class="matrix-card spotlight-card border-beam-hover">
+                    <div class="matrix-header">
+                        <div class="matrix-icon icon-indigo">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="matrix-items">
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">C</span>
+                                <span class="tech-level">IIT Kanpur &middot; TestDome</span>
+                            </div>
+                            <p class="tech-desc">Data Structures, Algorithms, low-level memory logic and pointers.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Java</span>
+                                <span class="tech-level">Enterprise &middot; OOP</span>
+                            </div>
+                            <p class="tech-desc">Object-oriented paradigms, concurrency, robust backend structure.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Python</span>
+                                <span class="tech-level">Data &middot; Scripting</span>
+                            </div>
+                            <p class="tech-desc">Automated scripting, data manipulation, algorithm prototyping.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">C++</span>
+                                <span class="tech-level">Performance</span>
+                            </div>
+                            <p class="tech-desc">Standard Template Library (STL), memory management, problem solving.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">JavaScript / TypeScript</span>
+                                <span class="tech-level">ES6+ &middot; Modern</span>
+                            </div>
+                            <p class="tech-desc">Asynchronous programming, event-driven architecture, typed systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 2: Web & Backend -->
+                <div class="matrix-card spotlight-card border-beam-hover">
+                    <div class="matrix-header">
+                        <div class="matrix-icon icon-blue">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>Web &amp; Backend Engineering</h3>
+                    </div>
+                    <div class="matrix-items">
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Spring Boot</span>
+                                <span class="tech-level">Java Framework</span>
+                            </div>
+                            <p class="tech-desc">RESTful microservices, dependency injection, enterprise backends.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">React &amp; Next.js</span>
+                                <span class="tech-level">Frontend</span>
+                            </div>
+                            <p class="tech-desc">Component-driven architecture, state management, modern hooks.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Tailwind CSS &amp; HTML5</span>
+                                <span class="tech-level">Design Systems</span>
+                            </div>
+                            <p class="tech-desc">Fluid responsive layouts, semantic markup, high-fidelity UI styling.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">PHP Architecture</span>
+                                <span class="tech-level">Backend</span>
+                            </div>
+                            <p class="tech-desc">Secure session management, CSRF protection, transactional endpoints.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Group 3: Data, Databases & Tools -->
+                <div class="matrix-card spotlight-card border-beam-hover">
+                    <div class="matrix-header">
+                        <div class="matrix-icon icon-emerald">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h3>Databases &amp; Analytics</h3>
+                    </div>
+                    <div class="matrix-items">
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">MySQL</span>
+                                <span class="tech-level">Relational</span>
+                            </div>
+                            <p class="tech-desc">Complex query design, table normalization, indexing &amp; schema tuning.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Prisma ORM</span>
+                                <span class="tech-level">Schema Modeling</span>
+                            </div>
+                            <p class="tech-desc">Type-safe database operations, migrations, relationship structuring.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Microsoft Power BI</span>
+                                <span class="tech-level">TestDome Silver</span>
+                            </div>
+                            <p class="tech-desc">Data modeling, DAX computations, interactive KPI dashboards.</p>
+                        </div>
+
+                        <div class="tech-item">
+                            <div class="tech-head">
+                                <span class="tech-title">Git &amp; GitHub</span>
+                                <span class="tech-level">Version Control</span>
+                            </div>
+                            <p class="tech-desc">Branching models, pull requests, automated workflow integrations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: VERIFIED CREDENTIALS -->
+        <section class="section-block" id="credentials">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <span class="section-tag">// 04 &middot; VERIFICATION VAULT</span>
+                    <h2 class="section-heading">Certifications &amp; Academic Honors</h2>
+                </div>
+                <p class="section-subtext">
+                    Formally validated credentials, performance certifications, and verified coursework records.
+                </p>
+            </div>
+
+            <div class="certs-list">
+                <!-- Cert 1: Genospark -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">Full Stack Development Experience Certificate</h3>
+                                <span class="cert-badge-pill">Verification: 2026I10047</span>
+                            </div>
+                            <p class="cert-org">Genospark Innovative Solutions Pvt. Ltd. &middot; Issued 19/10/2026</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <button class="btn-xs btn-outline" id="openGenosparkModalBtn2">Preview</button>
+                        <a href="https://genospark.in/employee-verification" target="_blank" rel="noopener noreferrer" class="btn-xs btn-accent">Verify Online ↗</a>
+                        <a href="Genospark_Internship_Certificate.pdf" target="_blank" class="btn-xs btn-subtle">PDF</a>
+                    </div>
+                </div>
+
+                <!-- Cert 2: Bireena -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">Full Stack Developer Internship Certificate</h3>
+                                <span class="cert-badge-pill">BR2K26FSD031</span>
+                            </div>
+                            <p class="cert-org">Bireena Info Tech Co. &middot; Issued 03/09/2026 (ISO 9001:2015 &amp; AICTE)</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <button class="btn-xs btn-outline" id="openBireenaModalBtn2">Preview</button>
+                        <a href="Bireena_Internship_Certificate.pdf" target="_blank" class="btn-xs btn-subtle">PDF</a>
+                    </div>
+                </div>
+
+                <!-- Cert 3: IIT Kanpur DSA with C -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">Data Structures with C</h3>
+                                <span class="cert-badge-pill">Academic Program</span>
+                            </div>
+                            <p class="cert-org">IIT Kanpur &middot; Comprehensive Coursework in C &amp; Algorithms</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <a href="DATA_STRUCTURES_WITH_C.pdf" target="_blank" class="btn-xs btn-accent">View Official PDF ↗</a>
+                    </div>
+                </div>
+
+                <!-- Cert 4: TestDome Power BI -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">Microsoft Power BI &middot; Silver Level</h3>
+                                <span class="cert-badge-pill">TestDome Certified</span>
+                            </div>
+                            <p class="cert-org">TestDome Skill Assessment &middot; Verified Credential</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <a href="https://www.testdome.com/certificates/ae6193798d3343188b459499fd7c4728" target="_blank" rel="noopener noreferrer" class="btn-xs btn-accent">Verify Online ↗</a>
+                    </div>
+                </div>
+
+                <!-- Cert 5: Naukri Campus NCAT AI -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">NCAT AI Participation Certification</h3>
+                                <span class="cert-badge-pill">Naukri Campus</span>
+                            </div>
+                            <p class="cert-org">National Campus Aptitude Test &middot; AI Track</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <a href="https://www.naukri.com/campus/certificates/nc_ai_ncat_participation_may_2026/v0/6a19a32ee34d6b76d03a00de?utm_source=certificate&utm_medium=copy&utm_campaign=6a19a32ee34d6b76d03a00de" target="_blank" rel="noopener noreferrer" class="btn-xs btn-accent">Verify Online ↗</a>
+                    </div>
+                </div>
+
+                <!-- Cert 6: Claude 101 Anthropic -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">Claude 101 Prompt &amp; Architecture Certification</h3>
+                                <span class="cert-badge-pill">Anthropic / Skilljar</span>
+                            </div>
+                            <p class="cert-org">Skilljar Verified &middot; AI Systems &amp; Prompt Engineering</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <a href="https://verify.skilljar.com/c/d6q5dm5xwsok" target="_blank" rel="noopener noreferrer" class="btn-xs btn-accent">Verify Online ↗</a>
+                    </div>
+                </div>
+
+                <!-- Cert 7: Skilljar AI Fluency -->
+                <div class="cert-item spotlight-card border-beam-hover">
+                    <div class="cert-left">
+                        <div class="cert-stamp-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <div class="cert-title-row">
+                                <h3 class="cert-name">AI Fluency for Students</h3>
+                                <span class="cert-badge-pill">Skilljar Verified</span>
+                            </div>
+                            <p class="cert-org">Modern AI Foundations &amp; Ethics</p>
+                        </div>
+                    </div>
+                    <div class="cert-action-cluster">
+                        <a href="https://verify.skilljar.com/c/as6feweidp5k" target="_blank" rel="noopener noreferrer" class="btn-xs btn-accent">Verify Online ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ABOUT & ENGINEERING PHILOSOPHY -->
+        <section class="section-block" id="about">
+            <div class="section-header-row">
+                <div class="section-title-wrap">
+                    <span class="section-tag">// 05 &middot; BACKGROUND</span>
+                    <h2 class="section-heading">Engineering Philosophy &amp; Profile</h2>
+                </div>
+                <p class="section-subtext">
+                    Academic grounding, systems mindset, and commitment to building reliable software.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card-left spotlight-card border-beam-hover">
+                    <div class="author-portrait-wrap">
+                        <div class="author-avatar-frame">
+                            <img src="profile.jpg" alt="Abhijit Kumar - Software Engineer" class="author-img">
+                            <div class="author-avatar-glow"></div>
+                        </div>
+                        <div class="author-info-box">
+                            <h3 class="author-name">Abhijit Kumar</h3>
+                            <span class="author-title">Software Engineer &middot; B.Tech CSE</span>
+                            <span class="author-location">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                Greater Noida, UP, India
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="about-quick-links">
+                        <a href="mailto:work.abhijit.27@gmail.com" class="about-link-row">
+                            <span class="link-label">Direct Email</span>
+                            <span class="link-val">work.abhijit.27@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" rel="noopener noreferrer" class="about-link-row">
+                            <span class="link-label">LinkedIn</span>
+                            <span class="link-val">/in/abhijit-kumar-713827284 ↗</span>
+                        </a>
+                        <a href="https://github.com/Abhijiteuon" target="_blank" rel="noopener noreferrer" class="about-link-row">
+                            <span class="link-label">GitHub</span>
+                            <span class="link-val">@Abhijiteuon ↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about-card-right spotlight-card border-beam-hover">
+                    <h3 class="about-subheading">Crafting Code with Intent and Longevity</h3>
+                    <div class="about-paragraphs">
+                        <p>
+                            I approach software engineering as an architectural craft. My work centers on building systems that remain clean under pressure—whether optimizing relational queries in MySQL, modeling type-safe schema layers in Prisma, or engineering responsive frontends that respect user focus.
+                        </p>
+                        <p>
+                            Currently pursuing a B.Tech in Computer Science at Mangalmay Institute of Engineering and Technology (AKTU, 2024–2028), I bridge rigorous theoretical foundations in Data Structures and Algorithms with real-world experience gained through production internships at Genospark and Bireena Info Tech.
+                        </p>
+                        <p>
+                            Outside of active codebases, I continuously experiment with modern web frameworks, low-level performance patterns in C/C++, and business intelligence data models using Microsoft Power BI.
+                        </p>
+                    </div>
+
+                    <div class="education-block">
+                        <div class="edu-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="edu-degree">Bachelor of Technology (B.Tech) in Computer Science &amp; Engineering</div>
+                            <div class="edu-school">Mangalmay Institute of Engineering and Technology &middot; AKTU</div>
+                            <div class="edu-date">2024 &mdash; 2028 &middot; Greater Noida, UP</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACT & INQUIRY -->
+        <section class="section-block" id="contact">
+            <div class="contact-card spotlight-card border-beam">
+                <div class="contact-header">
+                    <span class="section-tag">// 06 &middot; COLLABORATION</span>
+                    <h2 class="contact-heading">Let's build something enduring together.</h2>
+                    <p class="contact-sub">
+                        I am actively open to software development and full stack development roles, technical collaborations, and select engineering initiatives. Send a project inquiry below or reach out directly.
+                    </p>
+                </div>
+
+                <div class="contact-direct-grid">
+                    <a href="mailto:work.abhijit.27@gmail.com" class="direct-box">
+                        <div class="direct-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="direct-lbl">Email Inquiries</span>
+                            <span class="direct-val">work.abhijit.27@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" rel="noopener noreferrer" class="direct-box">
+                        <div class="direct-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="direct-lbl">LinkedIn Network</span>
+                            <span class="direct-val">Connect with Abhijit ↗</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Abhijiteuon" target="_blank" rel="noopener noreferrer" class="direct-box">
+                        <div class="direct-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="direct-lbl">Code Repositories</span>
+                            <span class="direct-val">@Abhijiteuon ↗</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact-cta-bar">
+                    <button id="openHireFormSectionBtn" class="btn-primary-large">
+                        <span>Launch Project Inquiry Form</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
@@ -90,742 +1169,303 @@
             </div>
         </section>
 
-        <main class="feed-content">
-            <!-- Technical Stack Card -->
-            <section class="feed-card" id="skills">
-                <div class="card-header">
-                    <h2 style="font-size: 1.25rem;">Technical Stack</h2>
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <div class="footer-inner">
+                <div class="footer-left">
+                    <span class="footer-brand">Abhijit Kumar</span>
+                    <span class="footer-copy">&copy; 2026 &middot; Software Engineer</span>
                 </div>
-                <div class="card-body">
-                    <div class="dash-row">
-                        <div class="dash-scroller">
-                            <!-- Simplified App Cards for Feed -->
-                            <div class="app-card" style="min-width: 200px; padding: 1.5rem;">
-                                <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(227, 76, 38, 0.1); border: 1px solid rgba(227, 76, 38, 0.3);">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e34c26" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10l1 2v14l-1 2H7l-1-2V4l1-2z"/><path d="M12 18V6"/><path d="M9 10h6"/></svg>
-                                </div>
-                                <div class="app-info">
-                                    <h4 style="font-size: 1rem; font-weight: 700;">Java Spring</h4>
-                                    <div class="app-dev" style="font-size: 0.8rem; color: #e34c26;">Enterprise Backend</div>
-                                </div>
-                            </div>
-                            <div class="app-card" style="min-width: 200px; padding: 1.5rem;">
-                                <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(55, 118, 171, 0.1); border: 1px solid rgba(55, 118, 171, 0.3);">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3776ab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><path d="M12 6v6l4 2"/></svg>
-                                </div>
-                                <div class="app-info">
-                                    <h4 style="font-size: 1rem; font-weight: 700;">Python</h4>
-                                    <div class="app-dev" style="font-size: 0.8rem; color: #3776ab;">AI & Scripting</div>
-                                </div>
-                            </div>
-                            <div class="app-card" style="min-width: 200px; padding: 1.5rem;">
-                                <div class="app-icon" style="width: 48px; height: 48px; border-radius: 12px; background: rgba(247, 223, 30, 0.1); border: 1px solid rgba(247, 223, 30, 0.3);">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f7df1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3z"/><path d="M18 10v4s-1 1-2 1-2-1-2-1"/><path d="M11 10s-1-1-2-1-2 1-2 2 1 2 2 2h0c1 0 2 1 2 2s-1 2-2 2-2-1-2-1"/></svg>
-                                </div>
-                                <div class="app-info">
-                                    <h4 style="font-size: 1rem; font-weight: 700;">Modern JS</h4>
-                                    <div class="app-dev" style="font-size: 0.8rem; color: #f7df1e;">React & Logic</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="footer-status-pill">
+                    <span class="status-indicator-dot"></span>
+                    <span>Greater Noida, UP &middot; Open for Opportunities</span>
                 </div>
-            </section>
-
-            <!-- Experience Card -->
-            <section class="feed-card" id="experience">
-                <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-                    <h2 style="font-size: 1.25rem;">Experience</h2>
-                    <span style="font-size: 0.75rem; color: var(--accent-color); font-weight: 600; background: rgba(99, 102, 241, 0.12); padding: 3px 10px; border-radius: 20px; border: 1px solid rgba(99, 102, 241, 0.3);">Verified Internships</span>
-                </div>
-                <div class="card-body" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                    <!-- Genospark Experience -->
-                    <div style="padding: 1.5rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--glass-bg);">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem;">Full Stack Development Intern</h3>
-                                <div style="color: var(--accent-color); font-weight: 600; font-size: 1.05rem;">Genospark Innovative Solutions Pvt. Ltd.</div>
-                                <div style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">06 July 2026 – 31 August 2026 (Remote) • Verification ID: 2026I10047 • ID: 2407860100002</div>
-                            </div>
-                            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
-                                <button class="menu-btn" id="openGenosparkModalBtn" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(99, 102, 241, 0.15); border: 1px solid var(--accent-color); color: var(--text-color);">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                                    <span>Preview Certificate</span>
-                                </button>
-                                <a href="https://genospark.in/employee-verification" target="_blank" class="menu-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.4rem; background: var(--glass-bg); border: 1px solid var(--accent-color); color: var(--accent-color); text-decoration: none;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                                    <span>Verify Online ↗</span>
-                                </a>
-                                <a href="Genospark_Internship_Certificate.pdf" target="_blank" class="menu-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.4rem; background: var(--glass-bg); border: 1px solid var(--card-border); color: var(--text-muted); text-decoration: none;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                    <span>PDF</span>
-                                </a>
-                            </div>
-                        </div>
-                        <ul style="list-style-type: disc; padding-left: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
-                            <li style="margin-bottom: 0.5rem;">Engineered the <strong>GenoSpark EMS Student Dashboard Module</strong>, transforming a prototype into a high-performance, full-width production analytics portal.</li>
-                            <li style="margin-bottom: 0.5rem;">Implemented live user-scoped database integrations with MySQL and Prisma schema alterations to track discrete question attempts, 1st-Attempt Accuracy Curves, and progress metrics.</li>
-                            <li style="margin-bottom: 0.5rem;">Built modern responsive UI components including a floating glass horizontal tab bar anchored beneath the Profile Hero Banner, and contributed to Anonymous Tracking DOU architecture.</li>
-                        </ul>
-                    </div>
-
-                    <!-- Bireena Experience -->
-                    <div style="padding: 1.5rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--glass-bg);">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
-                            <div>
-                                <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem;">Full Stack Developer Intern</h3>
-                                <div style="color: var(--accent-color); font-weight: 600; font-size: 1.05rem;">Bireena Info Tech Co.</div>
-                                <div style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">01 July 2026 – 30 August 2026 (2 Months) • Cert ID: BR2K26FSD031</div>
-                            </div>
-                            <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
-                                <button class="menu-btn" id="openBireenaModalBtn" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(99, 102, 241, 0.15); border: 1px solid var(--accent-color); color: var(--text-color);">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                                    <span>Preview Certificate</span>
-                                </button>
-                                <a href="Bireena_Internship_Certificate.pdf" target="_blank" class="menu-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.4rem; background: var(--glass-bg); border: 1px solid var(--card-border); color: var(--text-muted); text-decoration: none;">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                                    <span>PDF</span>
-                                </a>
-                            </div>
-                        </div>
-                        <ul style="list-style-type: disc; padding-left: 1.5rem; color: var(--text-muted); font-size: 0.95rem;">
-                            <li style="margin-bottom: 0.5rem;">Completed 2-month Full Stack Developer Internship with recognition for outstanding performance and dedication.</li>
-                            <li style="margin-bottom: 0.5rem;">Developed full-stack web platform for <strong>Enduring Welfare Organisation NGO</strong> (community outreach, initiatives, and admin system).</li>
-                            <li style="margin-bottom: 0.5rem;">Designed and implemented responsive web platform for <strong>Soohagan Silk</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Card -->
-            <section class="feed-card" id="projects">
-                <div class="card-header">
-                    <h2 style="font-size: 1.25rem;">Selected Projects</h2>
-                </div>
-                <div class="card-body">
-                    <div class="bento-grid">
-                        <a href="https://student-dashboard-sage.vercel.app/" target="_blank" class="bento-item reveal-fade" style="transition-delay: 0.1s; display: block; grid-column: span 1; grid-row: span 2;">
-                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80" alt="Student Dashboard" class="item-image">
-                            <div class="bento-overlay">
-                                <span class="bento-tag">Web App</span>
-                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem; color: white;">Student Dashboard</h3>
-                            </div>
-                        </a>
-                        <a href="https://she-can-foundation-app.vercel.app/" target="_blank" class="bento-item reveal-fade" style="transition-delay: 0.2s; display: block; grid-column: span 1; grid-row: span 2;">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80" alt="She Can Foundation App" class="item-image">
-                            <div class="bento-overlay">
-                                <span class="bento-tag">Web App</span>
-                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem; color: white;">She Can Foundation App</h3>
-                            </div>
-                        </a>
-                        <a href="https://college-compass-iota.vercel.app/" target="_blank" class="bento-item reveal-fade" style="transition-delay: 0.3s; display: block; grid-column: span 1; grid-row: span 2;">
-                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80" alt="College Compass" class="item-image">
-                            <div class="bento-overlay">
-                                <span class="bento-tag">Web App</span>
-                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem; color: white;">College Compass</h3>
-                            </div>
-                        </a>
-                        <a href="https://abhijit-euon.free.nf/" target="_blank" class="bento-item reveal-fade" style="transition-delay: 0.4s; display: block; grid-column: span 1; grid-row: span 2;">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80" alt="TaskMaster PHP Project" class="item-image">
-                            <div class="bento-overlay">
-                                <span class="bento-tag">Web App</span>
-                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem; color: white;">TaskMaster PHP System</h3>
-                            </div>
-                        </a>
-                        <a href="https://upi-payment-app-puce.vercel.app/" target="_blank" class="bento-item reveal-fade" style="transition-delay: 0.5s; display: block; grid-column: span 1; grid-row: span 2;">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80" alt="UPI Payment App" class="item-image">
-                            <div class="bento-overlay">
-                                <span class="bento-tag">Web App</span>
-                                <h3 style="font-size: 1.2rem; margin-top: 0.5rem; color: white;">UPI Payment App</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Certifications Card -->
-            <section class="feed-card" id="certs">
-                <div class="card-header">
-                    <h2 style="font-size: 1.25rem;">Certifications & Achievements</h2>
-                </div>
-                <div class="card-body">
-                    <div class="cert-grid" style="grid-template-columns: 1fr; gap: 1rem; padding: 0;">
-                        <!-- Genospark Internship Experience Certificate -->
-                        <div class="cert-card" style="padding: 1rem; gap: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 260px;">
-                                <div class="cert-icon" style="width: 44px; height: 44px; border-radius: 10px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-color);">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                                </div>
-                                <div class="cert-info">
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                                        <h3 style="font-size: 1rem; font-weight: 700; margin: 0;">Full Stack Development Experience Certificate</h3>
-                                        <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(99, 102, 241, 0.2); color: var(--accent-color); font-weight: 600;">2026I10047</span>
-                                    </div>
-                                    <p style="font-size: 0.82rem; margin-top: 0.2rem; margin-bottom: 0; color: var(--text-muted);">Genospark Innovative Solutions Pvt. Ltd. • Issued 19/10/2026 • Verified Online</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-                                <button class="menu-btn" id="openGenosparkModalBtn2" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; border-radius: 6px; cursor: pointer; border: 1px solid var(--accent-color); background: rgba(99, 102, 241, 0.1); color: var(--accent-color);">Preview</button>
-                                <a href="https://genospark.in/employee-verification" target="_blank" class="cert-link" style="font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--accent-color); background: rgba(99, 102, 241, 0.1); color: var(--accent-color); display: inline-flex; align-items: center; gap: 4px; text-decoration: none;">Verify ↗</a>
-                                <a href="Genospark_Internship_Certificate.pdf" target="_blank" class="cert-link" style="font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--card-border); background: var(--glass-bg); color: var(--text-color); display: inline-flex; align-items: center; gap: 4px; text-decoration: none;">PDF ↗</a>
-                            </div>
-                        </div>
-                        <!-- Bireena Internship Certificate -->
-                        <div class="cert-card" style="padding: 1rem; gap: 1rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-                            <div style="display: flex; align-items: center; gap: 1rem; flex: 1; min-width: 260px;">
-                                <div class="cert-icon" style="width: 44px; height: 44px; border-radius: 10px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent-color);">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                                </div>
-                                <div class="cert-info">
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                                        <h3 style="font-size: 1rem; font-weight: 700; margin: 0;">Full Stack Developer Internship</h3>
-                                        <span style="font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(99, 102, 241, 0.2); color: var(--accent-color); font-weight: 600;">BR2K26FSD031</span>
-                                    </div>
-                                    <p style="font-size: 0.82rem; margin-top: 0.2rem; margin-bottom: 0; color: var(--text-muted);">Bireena Info Tech Co. • Issued 03/09/2026 (ISO 9001:2015 & AICTE recognized)</p>
-                                </div>
-                            </div>
-                            <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                <button class="menu-btn" id="openBireenaModalBtn2" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; border-radius: 6px; cursor: pointer; border: 1px solid var(--accent-color); background: rgba(99, 102, 241, 0.1); color: var(--accent-color);">Preview</button>
-                                <a href="Bireena_Internship_Certificate.pdf" target="_blank" class="cert-link" style="font-size: 0.75rem; padding: 0.4rem 0.8rem; border-radius: 6px; border: 1px solid var(--card-border); background: var(--glass-bg); color: var(--text-color); display: inline-flex; align-items: center; gap: 4px; text-decoration: none;">PDF ↗</a>
-                            </div>
-                        </div>
-                        <!-- New Cert -->
-                        <a href="https://www.naukri.com/campus/certificates/nc_ai_ncat_participation_may_2026/v0/6a19a32ee34d6b76d03a00de?utm_source=certificate&utm_medium=copy&utm_campaign=6a19a32ee34d6b76d03a00de" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
-                            <div class="cert-icon" style="width: 40px; height: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                            </div>
-                            <div class="cert-info">
-                                <h3 style="font-size: 1rem;">NCAT AI Participation</h3>
-                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">Naukri Campus</p>
-                                <span class="cert-link" style="font-size: 0.7rem;">View →</span>
-                            </div>
-                        </a>
-                        <!-- Cert 1 -->
-                        <a href="https://verify.skilljar.com/c/as6feweidp5k" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
-                            <div class="cert-icon" style="width: 40px; height: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-                            </div>
-                            <div class="cert-info">
-                                <h3 style="font-size: 1rem;">AI Fluency for Students</h3>
-                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">Skilljar</p>
-                                <span class="cert-link" style="font-size: 0.7rem;">View →</span>
-                            </div>
-                        </a>
-                        <!-- Cert 2 -->
-                        <a href="https://www.testdome.com/certificates/ae6193798d3343188b459499fd7c4728" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
-                            <div class="cert-icon" style="width: 40px; height: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
-                            </div>
-                            <div class="cert-info">
-                                <h3 style="font-size: 1rem;">Power BI Certification</h3>
-                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">TestDome / Silver Level</p>
-                                <span class="cert-link" style="font-size: 0.7rem;">View →</span>
-                            </div>
-                        </a>
-                        <!-- Cert 3 -->
-                        <a href="DATA_STRUCTURES_WITH_C.pdf" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
-                            <div class="cert-icon" style="width: 40px; height: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                            </div>
-                            <div class="cert-info">
-                                <h3 style="font-size: 1rem;">Data Structures & Algorithms</h3>
-                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">IIT Kanpur / Verified Certificate</p>
-                                <span class="cert-link" style="font-size: 0.7rem;">View PDF →</span>
-                            </div>
-                        </a>
-                        <!-- Cert 4 -->
-                        <a href="https://verify.skilljar.com/c/d6q5dm5xwsok" target="_blank" class="cert-card" style="padding: 1rem; gap: 1rem;">
-                            <div class="cert-icon" style="width: 40px; height: 40px;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
-                            </div>
-                            <div class="cert-info">
-                                <h3 style="font-size: 1rem;">Claude 101 Certification</h3>
-                                <p style="font-size: 0.8rem; margin-bottom: 0.2rem;">Anthropic / Skilljar</p>
-                                <span class="cert-link" style="font-size: 0.7rem;">Verify →</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <!-- Replaced sections below -->
-            <!-- Analytics Dashboard (moved from sidebar) -->
-            <section class="feed-card">
-                <div class="card-header">
-                    <h3 style="font-size: 1rem;">Analytics Dashboard</h3>
-                </div>
-                <div class="card-body">
-                    <div class="dash-row" style="margin-bottom: 1rem;">
-                        <div class="stat-item">
-                            <span>GitHub Contributions</span>
-                            <span class="stat-value">842</span>
-                        </div>
-                        <div style="height: 4px; background: #30363d; border-radius: 2px; margin-top: 8px;">
-                            <div style="width: 80%; height: 100%; background: var(--primary-gradient); border-radius: 2px;"></div>
-                        </div>
-                    </div>
-                    <div class="dash-row">
-                        <div class="stat-item">
-                            <span>Skill Proficiency</span>
-                            <span class="stat-value">92%</span>
-                        </div>
-                        <div style="height: 4px; background: #30363d; border-radius: 2px; margin-top: 8px;">
-                            <div style="width: 92%; height: 100%; background: var(--secondary-gradient); border-radius: 2px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="feed-card">
-                <div class="card-header">
-                    <h3 style="font-size: 1rem;">Let's Connect</h3>
-                </div>
-                <div class="card-body">
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Open to opportunities and collaboration.</p>
-                    <button class="menu-btn" id="contactNavBtn" style="width: 100%; padding: 0.8rem; border: 1px solid var(--card-border); background: var(--glass-bg); color: var(--text-color); border-radius: 8px; cursor: pointer;">Contact Info</button>
-                </div>
-            </section>
-        </main>
-    </div>
-
-    <!-- Modal Base Overlays -->
-    <!-- The About Modal -->
-    <div class="about-modal" id="aboutModal">
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-body">
-                <div class="modal-image">
-                    <img src="profile.jpg" alt="Abhijit Kumar" id="profileImage">
-                </div>
-                <div class="modal-info">
-                    <h3 class="modal-name">Abhijit Kumar</h3>
-                    <p class="modal-bio">Aspiring Software Engineer pursuing B.Tech in Computer Science with strong academic performance. Interested in applying programming knowledge to develop solutions for real-world challenges. Skilled in analytical thinking, problem-solving, and continuous learning.</p>
-                    <div class="modal-details">
-                        <div class="detail-group">
-                            <h4>Education</h4>
-                            <p>B.Tech in CSE<br>Mangalmay Institute of Technology<br>2024 - 2028</p>
-                        </div>
-                        <div class="detail-group">
-                            <h4>Skills</h4>
-                            <p>C, Java, Python, C++, HTML, Tailwind CSS, JS, Spring Boot, MySQL, Microsoft Power BI</p>
-                        </div>
-                    </div>
+                <div class="footer-links">
+                    <a href="#hero">Back to top &uarr;</a>
+                    <a href="cv.html" target="_blank">Printable CV</a>
+                    <a href="resume.html" target="_blank">Web Resume</a>
                 </div>
             </div>
-        </div>
-    </div>
+        </footer>
 
-    <!-- Callback Modal -->
-    <div class="about-modal" id="callbackModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" style="max-width: 500px; max-height: 85vh; overflow-y: auto; padding: 0;">
-            <button class="modal-close tooltip-close" style="top: 15px; right: 20px;">&times;</button>
-            
-            <div style="padding: 2.5rem 2rem;">
-                <h2 class="section-title" style="margin-bottom: 0.5rem; border: none; font-size: 2rem; background: var(--text-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Hire me form</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">Fill out this brief form to start our collaboration.</p>
-                
-                <form id="googleHireMeForm" class="callback-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf5RJboWZM5Mke0BjrHjiFB9pN4AtQqiIjN-tirnK740-Ofyg/formResponse" method="POST" target="hidden_iframe">
+    </main>
+
+    <!-- ================= MODALS & DRAWERS ================= -->
+
+    <!-- 1. HIRE ME / PROJECT INQUIRY MODAL (Full Google Form Integration) -->
+    <div class="modern-modal" id="callbackModal" role="dialog" aria-modal="true" aria-labelledby="modalInquiryTitle">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog">
+            <div class="modal-panel border-beam">
+                <div class="modal-panel-header">
+                    <div>
+                        <span class="section-tag">// DIRECT INQUIRY</span>
+                        <h2 class="modal-title" id="modalInquiryTitle">Initiate a Collaboration</h2>
+                        <p class="modal-subtitle">Direct dispatch to Abhijit's inbox via secure submission.</p>
+                    </div>
+                    <button class="modal-close-btn" id="closeHireModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+
+                <form id="googleHireMeForm" class="inquiry-form" action="https://docs.google.com/forms/d/e/1FAIpQLSf5RJboWZM5Mke0BjrHjiFB9pN4AtQqiIjN-tirnK740-Ofyg/formResponse" method="POST" target="hidden_iframe">
                     <!-- Required Hidden Fields -->
                     <input type="hidden" name="fvv" value="1">
                     <input type="hidden" name="pageHistory" value="0">
-                    
+
                     <!-- Section 1: Contact Details -->
-                    <div class="form-section">
-                        <h3 class="form-section-head">Contact Details</h3>
-                        <div class="form-group">
-                            <label for="gh-name">Full Name *</label>
-                            <input type="text" id="gh-name" name="entry.983177884" required placeholder="John Doe">
-                        </div>
-                        <div class="form-group">
-                            <label for="gh-company">Company / Organization *</label>
-                            <input type="text" id="gh-company" name="entry.1670445953" required placeholder="Company Name">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="gh-email">Email Address *</label>
-                                <input type="email" id="gh-email" name="entry.786384584" required placeholder="email@example.com">
+                    <div class="form-section-block">
+                        <h3 class="form-block-title">01 &middot; Contact Information</h3>
+                        <div class="form-grid-2">
+                            <div class="input-wrap">
+                                <label for="gh-name">Full Name <span class="req">*</span></label>
+                                <input type="text" id="gh-name" name="entry.983177884" required placeholder="Alex Mercer" autocomplete="name">
                             </div>
-                            <div class="form-group">
-                                <label for="gh-phone">Phone (Optional)</label>
-                                <input type="tel" id="gh-phone" name="entry.898887050" placeholder="+1 234 567 8900">
+                            <div class="input-wrap">
+                                <label for="gh-company">Company / Organization <span class="req">*</span></label>
+                                <input type="text" id="gh-company" name="entry.1670445953" required placeholder="Acme Technologies" autocomplete="organization">
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="input-wrap">
+                                <label for="gh-email">Work Email <span class="req">*</span></label>
+                                <input type="email" id="gh-email" name="entry.786384584" required placeholder="alex@acme.com" autocomplete="email">
+                            </div>
+                            <div class="input-wrap">
+                                <label for="gh-phone">Phone Number (Optional)</label>
+                                <input type="tel" id="gh-phone" name="entry.898887050" placeholder="+91 98765 43210" autocomplete="tel">
                             </div>
                         </div>
                     </div>
 
                     <!-- Section 2: Project Specifications -->
-                    <div class="form-section">
-                        <h3 class="form-section-head">Project Specifications</h3>
-                        <div class="form-group">
-                            <label>Services Required *</label>
-                            <div class="custom-checkbox-group">
-                                <label class="custom-check"><input type="checkbox" name="entry.1051866796" value="Web Design & Development"><span>Web Development</span></label>
-                                <label class="custom-check"><input type="checkbox" name="entry.1051866796" value="Mobile App Development (iOS/Android)"><span>Mobile Apps</span></label>
-                                <label class="custom-check"><input type="checkbox" name="entry.1051866796" value="Graphic Design/Branding"><span>Branding</span></label>
-                                <label class="custom-check"><input type="checkbox" name="entry.1051866796" value="UI/UX Consulting"><span>UI/UX</span></label>
-                                <label class="custom-check"><input type="checkbox" name="entry.1051866796" value="Content Creation/Copywriting"><span>Copywriting</span></label>
-                                <label class="custom-check"><input type="checkbox" name="entry.1051866796" value="Other (Please specify in the project details)"><span>Other</span></label>
-                            </div>
+                    <div class="form-section-block">
+                        <h3 class="form-block-title">02 &middot; Scope of Services</h3>
+                        <div class="pill-checkbox-group">
+                            <label class="pill-check">
+                                <input type="checkbox" name="entry.1051866796" value="Web Design & Development" checked>
+                                <span>Web Engineering</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="entry.1051866796" value="Backend API / Systems">
+                                <span>Backend Systems</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="entry.1051866796" value="Mobile App Development (iOS/Android)">
+                                <span>Mobile Apps</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="entry.1051866796" value="UI/UX Consulting">
+                                <span>UI/UX Architecture</span>
+                            </label>
+                            <label class="pill-check">
+                                <input type="checkbox" name="entry.1051866796" value="Software Development & Full Stack Roles">
+                                <span>Software / Full Stack Roles</span>
+                            </label>
                         </div>
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="gh-date">Target Start Date *</label>
+                        <div class="form-grid-2 mt-4">
+                            <div class="input-wrap">
+                                <label for="gh-date">Target Start Date <span class="req">*</span></label>
                                 <input type="date" id="gh-date" name="entry.882750652" required>
                             </div>
-                            <div class="form-group">
-                                <label for="gh-source">How did you find me? *</label>
+                            <div class="input-wrap">
+                                <label for="gh-source">Referral Source <span class="req">*</span></label>
                                 <select id="gh-source" name="entry.1382459980" required>
-                                    <option value="" disabled selected>Select option</option>
-                                    <option value="Referral from a contact">Referral</option>
-                                    <option value="Social Media (LinkedIn, Instagram, etc.)">Social Media</option>
-                                    <option value="Search Engine (Google, Bing, etc.)">Search Engine</option>
-                                    <option value="Online Portfolio Site (Behance, Dribbble, etc.)">Online Portfolio</option>
-                                    <option value="Former Client">Former Client</option>
+                                    <option value="" disabled selected>Select channel</option>
+                                    <option value="LinkedIn">LinkedIn</option>
+                                    <option value="GitHub">GitHub</option>
+                                    <option value="Referral from a contact">Colleague Referral</option>
+                                    <option value="Online Portfolio Site (Behance, Dribbble, etc.)">Direct Portfolio</option>
+                                    <option value="Search Engine (Google, Bing, etc.)">Search</option>
                                     <option value="Other">Other</option>
                                 </select>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Section 3: Timeline & Budget -->
-                    <div class="form-section">
-                        <h3 class="form-section-head">Timeline & Budget</h3>
-                        <div class="form-group">
-                            <label>Project Budget *</label>
-                            <div class="custom-radio-group">
-                                <label class="custom-radio"><input type="radio" name="entry.1178728037" value="Under $500" required><span>Under $500</span></label>
-                                <label class="custom-radio"><input type="radio" name="entry.1178728037" value="$500 - $2,500"><span>$500-$2.5k</span></label>
-                                <label class="custom-radio"><input type="radio" name="entry.1178728037" value="$2,501 - $7,000"><span>$2.5k-$7k</span></label>
-                                <label class="custom-radio"><input type="radio" name="entry.1178728037" value="I'm not sure yet / Requesting a quote"><span>Not sure</span></label>
-                            </div>
+                    <!-- Section 3: Budget & Urgency -->
+                    <div class="form-section-block">
+                        <h3 class="form-block-title">03 &middot; Timeline &amp; Budget</h3>
+                        <div class="pill-radio-group">
+                            <label class="pill-radio">
+                                <input type="radio" name="entry.1178728037" value="Under $500" required>
+                                <span>&lt; $500</span>
+                            </label>
+                            <label class="pill-radio">
+                                <input type="radio" name="entry.1178728037" value="$500 - $2,500">
+                                <span>$500 &mdash; $2.5k</span>
+                            </label>
+                            <label class="pill-radio">
+                                <input type="radio" name="entry.1178728037" value="$2,501 - $7,000">
+                                <span>$2.5k &mdash; $7k</span>
+                            </label>
+                            <label class="pill-radio">
+                                <input type="radio" name="entry.1178728037" value="I'm not sure yet / Requesting a quote">
+                                <span>Software Role / To be quoted</span>
+                            </label>
                         </div>
 
-                        <div class="form-group">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                <label>Urgency Level (1-10) *</label>
-                                <span id="urgencyValue" style="color: var(--accent-color); font-weight: 700; font-size: 0.8rem;">5 - Normal</span>
+                        <div class="slider-wrap mt-4">
+                            <div class="slider-label-row">
+                                <label for="gh-urgency">Execution Urgency</label>
+                                <span id="urgencyValue" class="slider-badge">5 &middot; Standard</span>
                             </div>
-                            <input type="range" id="gh-urgency" name="entry.1271196650" min="1" max="10" value="5" class="custom-slider">
+                            <input type="range" id="gh-urgency" name="entry.1271196650" min="1" max="10" value="5" class="modern-slider">
                         </div>
                     </div>
 
-                    <!-- Section 4: Project Info -->
-                    <div class="form-section" style="border: none;">
-                        <h3 class="form-section-head">Additional Information</h3>
-                        <div class="form-group" style="margin-bottom: 0;">
-                            <label for="gh-info">Project Details *</label>
-                            <textarea id="gh-info" name="entry.1947214904" required placeholder="Tell me about your project, goals, and any specific requirements..." style="resize: none; height: 100px;"></textarea>
+                    <!-- Section 4: Details -->
+                    <div class="form-section-block no-border">
+                        <h3 class="form-block-title">04 &middot; Project Specifications</h3>
+                        <div class="input-wrap">
+                            <label for="gh-info">Details &amp; Objectives <span class="req">*</span></label>
+                            <textarea id="gh-info" name="entry.1947214904" required rows="4" placeholder="Briefly outline your team's requirements, milestones, or questions..."></textarea>
                         </div>
                     </div>
-                    
-                    <button type="submit" class="submit-btn hire-submit-btn" style="width: 100%; padding: 1.1rem; background: var(--primary-gradient); color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; margin-top: 2rem; cursor: pointer; transition: all 0.3s ease;">
-                        SEND INQUIRY
-                    </button>
+
+                    <div class="modal-footer-actions">
+                        <button type="submit" class="submit-action-btn" id="hireSubmitBtn">
+                            <span>Submit Inquiry</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
                 </form>
-            </div>
 
-            <!-- Success Message Overlay -->
-            <div id="formSuccessMessage" class="form-success-overlay" style="display: none;">
-                <div class="success-content">
-                    <div class="success-icon">✓</div>
-                    <h3>Success!</h3>
-                    <p>Your inquiry has been sent to my Google Form. I'll review it and reach out shortly.</p>
-                    <button class="menu-btn" onclick="document.getElementById('callbackModal').classList.remove('active'); document.body.style.overflow = '';">CLOSE</button>
+                <!-- Success Overlay -->
+                <div id="formSuccessMessage" class="modal-success-screen" style="display: none;">
+                    <div class="success-box">
+                        <div class="success-glyph">&check;</div>
+                        <h3>Inquiry Dispatched</h3>
+                        <p>Thank you for reaching out. Your brief has been transmitted to Abhijit's inbox. You will receive a response within 24 hours.</p>
+                        <button class="btn-sm btn-accent mt-4" id="closeSuccessBtn">Return to Portfolio</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Resume Modal -->
-    <div class="about-modal" id="resumeModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content resume-modal-content">
-            <button class="modal-close">&times;</button>
-            <div class="resume-container">
-                <header class="resume-header">
-                    <h1>ABHIJIT KUMAR</h1>
-                    <p class="resume-subtitle">Software Engineer</p>
-                    <div style="margin-top: 1.2rem; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-                        <a href="cv.html" target="_blank" class="menu-btn" style="display: inline-flex; align-items: center; gap: 8px; padding: 0.6rem 1.4rem; font-size: 0.88rem; background: var(--primary-gradient); color: white; border: none; border-radius: 6px; text-decoration: none; font-weight: 700; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M10 8h4"/><path d="M10 12h4"/><path d="M10 16h4"/></svg>
-                            <span>Open Printable CV / Save as PDF</span>
+    <!-- 2. GENOSPARK CERTIFICATE PREVIEW MODAL -->
+    <div class="modern-modal" id="genosparkCertModal" role="dialog" aria-modal="true" aria-labelledby="genoModalTitle">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog max-w-4xl">
+            <div class="modal-panel border-beam">
+                <div class="modal-panel-header">
+                    <div>
+                        <span class="section-tag">// CREDENTIAL PREVIEW</span>
+                        <h2 class="modal-title" id="genoModalTitle">Full Stack Development Experience Certificate</h2>
+                        <p class="modal-subtitle">Genospark Innovative Solutions Pvt. Ltd. &middot; Verification ID: 2026I10047</p>
+                    </div>
+                    <button class="modal-close-btn" id="closeGenoModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+
+                <div class="modal-img-stage">
+                    <img src="Genospark_Internship_Certificate.png" alt="Genospark Internship Experience Certificate - Abhijit Kumar" class="cert-full-img">
+                </div>
+
+                <div class="modal-panel-footer">
+                    <div class="cert-footer-meta">
+                        <span><strong>Recipient:</strong> Abhijit Kumar</span>
+                        <span><strong>Role:</strong> Full Stack Development Intern (06 July &mdash; 31 August 2026)</span>
+                        <span><strong>Student ID:</strong> 2407860100002 &middot; <strong>Date:</strong> 19-10-2026</span>
+                    </div>
+                    <div class="cert-footer-actions">
+                        <a href="https://genospark.in/employee-verification" target="_blank" rel="noopener noreferrer" class="btn-sm btn-accent">Verify Online ↗</a>
+                        <a href="Genospark_Internship_Certificate.pdf" target="_blank" class="btn-sm btn-subtle">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. BIREENA CERTIFICATE PREVIEW MODAL -->
+    <div class="modern-modal" id="bireenaCertModal" role="dialog" aria-modal="true" aria-labelledby="bireenaModalTitle">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog max-w-4xl">
+            <div class="modal-panel border-beam">
+                <div class="modal-panel-header">
+                    <div>
+                        <span class="section-tag">// CREDENTIAL PREVIEW</span>
+                        <h2 class="modal-title" id="bireenaModalTitle">Full Stack Developer Internship Certificate</h2>
+                        <p class="modal-subtitle">Bireena Info Tech Co. &middot; Certificate ID: BR2K26FSD031 &middot; ISO 9001:2015</p>
+                    </div>
+                    <button class="modal-close-btn" id="closeBireenaModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+
+                <div class="modal-img-stage">
+                    <img src="Bireena_Internship_Certificate.png" alt="Bireena Info Tech Internship Certificate - Abhijit Kumar" class="cert-full-img">
+                </div>
+
+                <div class="modal-panel-footer">
+                    <div class="cert-footer-meta">
+                        <span><strong>Recipient:</strong> Abhijit Kumar</span>
+                        <span><strong>Role:</strong> Full Stack Developer Intern (01 July &mdash; 30 August 2026)</span>
+                        <span><strong>Issued:</strong> 03/09/2026 &middot; ISO 9001:2015 &amp; AICTE Certified</span>
+                    </div>
+                    <div class="cert-footer-actions">
+                        <a href="Bireena_Internship_Certificate.pdf" target="_blank" class="btn-sm btn-accent">Download Official PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. QUICK RESUME OVERVIEW MODAL -->
+    <div class="modern-modal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+        <div class="modal-backdrop"></div>
+        <div class="modal-dialog max-w-3xl">
+            <div class="modal-panel border-beam">
+                <div class="modal-panel-header">
+                    <div>
+                        <span class="section-tag">// CURRICULUM VITAE</span>
+                        <h2 class="modal-title" id="resumeModalTitle">Abhijit Kumar &middot; Engineering Profile</h2>
+                        <p class="modal-subtitle">Quick overview of skills, education, and credentials.</p>
+                    </div>
+                    <button class="modal-close-btn" id="closeResumeModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+
+                <div class="resume-overview-body">
+                    <div class="resume-meta-card">
+                        <div class="resume-meta-item">
+                            <span class="meta-label">Degree</span>
+                            <span class="meta-value">B.Tech in Computer Science &amp; Engineering</span>
+                        </div>
+                        <div class="resume-meta-item">
+                            <span class="meta-label">Institution</span>
+                            <span class="meta-value">Mangalmay Institute of Engineering &amp; Technology, AKTU</span>
+                        </div>
+                        <div class="resume-meta-item">
+                            <span class="meta-label">Timeline</span>
+                            <span class="meta-value">2024 &mdash; 2028 &middot; Greater Noida, UP</span>
+                        </div>
+                        <div class="resume-meta-item">
+                            <span class="meta-label">Specialization</span>
+                            <span class="meta-value">Backend Systems, Data Structures (C/Java), Web Engineering</span>
+                        </div>
+                    </div>
+
+                    <div class="resume-modal-cta-row">
+                        <a href="cv.html" target="_blank" class="btn-primary-large w-full text-center">
+                            <span>Open Dedicated Printable CV / Save PDF</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                            </svg>
+                        </a>
+                        <a href="resume.html" target="_blank" class="btn-outline-large w-full text-center">
+                            <span>Open Web Resume View</span>
                         </a>
                     </div>
-                </header>
-                
-                <div class="resume-grid">
-                    <aside class="resume-sidebar">
-                        <section class="resume-section">
-                            <h3>CONTACT</h3>
-                            <ul class="resume-contact-list">
-                                <li><span class="icon">📧</span> work.abhijit.27@gmail.com</li>
-                                <li><span class="icon">📍</span> Greater Noida, UP</li>
-                                <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank">linkedin.com/abhijit-kumar</a></li>
-                                <li><span class="icon">🐙</span> <a href="https://github.com/Abhijiteuon" target="_blank">github.com/Abhijiteuon</a></li>
-                            </ul>
-                        </section>
-
-                        <section class="resume-section">
-                            <h3>EDUCATION</h3>
-                            <p><strong>Mangalmay Institute of Engineering and Technology, Aktu</strong></p>
-                            <p>2024 - 2028</p>
-                            <p>B.Tech in CSE</p>
-                        </section>
-
-                        <section class="resume-section">
-                            <h3>AWARDS & CERTIFICATIONS</h3>
-                            <ul class="resume-list">
-                                <li>Full Stack Development Experience Certificate (Genospark - 2026I10047)</li>
-                                <li>Full Stack Developer Internship Certificate (Bireena Info Tech Co. - BR2K26FSD031)</li>
-                                <li>NCAT AI Participation (Naukri Campus)</li>
-                                <li>AI fluency for students</li>
-                                <li>Power BI Certification (TestDome)</li>
-                                <li>C Programming Certification (TestDome)</li>
-                            </ul>
-                        </section>
-                    </aside>
-
-                    <article class="resume-main">
-                        <section class="resume-section">
-                            <h3>PROFILE</h3>
-                            <p>Aspiring Software Engineer pursuing B.Tech in Computer Science with strong academic performance. Interested in applying programming knowledge to develop solutions for real-world challenges. Skilled in analytical thinking, problem-solving, and continuous learning. Seeking opportunities to grow as a developer and contribute to impactful software projects.</p>
-                        </section>
-
-                        <section class="resume-section">
-                            <h3>SKILLS</h3>
-                            <div class="resume-skills-grid">
-                                <div>
-                                    <h4>Programming Languages:</h4>
-                                    <p>C (TestDome Certified, DSA), Java (OOPS), Python, C++</p>
-                                </div>
-                                <div>
-                                    <h4>Web & Backend Development:</h4>
-                                    <p>HTML5, Tailwind CSS, Spring Boot</p>
-                                </div>
-                                <div>
-                                    <h4>Database:</h4>
-                                    <p>MySQL</p>
-                                </div>
-                                <div>
-                                    <h4>Development Tools / IDEs:</h4>
-                                    <p>Visual Studio Code, IntelliJ IDEA, Antigravity, Anaconda</p>
-                                </div>
-                                <div>
-                                    <h4>Version Control:</h4>
-                                    <p>Git</p>
-                                </div>
-                                <div>
-                                    <h4>Data Visualization & Analytics:</h4>
-                                    <p>Microsoft Power BI</p>
-                                </div>
-                                <div>
-                                    <h4>Soft Skills:</h4>
-                                    <p>Problem Solving, Analytical Thinking, Communication Skills, Team Collaboration, Adaptability, Time Management</p>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section class="resume-section">
-                            <h3>EXPERIENCE</h3>
-                            <div class="resume-project">
-                                <h4>Full Stack Development Intern</h4>
-                                <p class="project-tags">Genospark Innovative Solutions Pvt. Ltd. | Jul 2026 – Aug 2026 (Remote)</p>
-                                <ul class="resume-list">
-                                    <li>Architected and refactored GenoSpark EMS Student Dashboard Module into a production analytics portal.</li>
-                                    <li>Integrated live MySQL user-scoped data streams and altered Prisma schema to compute 1st-Attempt Accuracy Curves.</li>
-                                    <li>Engineered floating glass navigation components and contributed to Anonymous Tracking DOU architecture.</li>
-                                    <li>Verification ID: 2026I10047 (Verified at genospark.in/employee-verification)</li>
-                                </ul>
-                            </div>
-                            <div class="resume-project" style="margin-top: 1.5rem;">
-                                <h4>Full Stack Developer Intern</h4>
-                                <p class="project-tags">Bireena Info Tech Co. | Jul 2026 – Aug 2026 (2 Months)</p>
-                                <ul class="resume-list">
-                                    <li>Completed 2-month Full Stack Developer Internship with outstanding performance.</li>
-                                    <li>Engineered web portal and admin management system for Enduring Welfare Organisation NGO.</li>
-                                    <li>Designed and developed responsive web platform for Soohagan Silk.</li>
-                                    <li>Certificate Credential ID: BR2K26FSD031</li>
-                                </ul>
-                            </div>
-                        </section>
-
-                        <section class="resume-section">
-                            <h3>PROJECTS</h3>
-                            <div class="resume-project">
-                                <h4>Student Dashboard</h4>
-                                <p class="project-tags">Web Application, Frontend, Dashboard</p>
-                                <ul class="resume-list">
-                                    <li>Developed a comprehensive live student dashboard for analytics and management.</li>
-                                    <li>Built with modern frontend technologies focusing on UX and responsiveness.</li>
-                                    <li><a href="https://student-dashboard-sage.vercel.app/" target="_blank" style="color: var(--clr-vibrant-4); text-decoration: underline;">View Live Project</a></li>
-                                </ul>
-                            </div>
-                            <div class="resume-project" style="margin-top: 1.5rem;">
-                                <h4>She Can Foundation App</h4>
-                                <p class="project-tags">Web Application, Frontend, Community Platform</p>
-                                <ul class="resume-list">
-                                    <li>Built an interactive web application for the She Can Foundation.</li>
-                                    <li>Designed an intuitive UI to support community engagement and foundation goals.</li>
-                                    <li><a href="https://she-can-foundation-app.vercel.app/" target="_blank" style="color: var(--clr-vibrant-4); text-decoration: underline;">View Live Project</a></li>
-                                </ul>
-                            </div>
-                            <div class="resume-project" style="margin-top: 1.5rem;">
-                                <h4>College Compass</h4>
-                                <p class="project-tags">Web Application, Data Analytics, Platform</p>
-                                <ul class="resume-list">
-                                    <li>Developed a comprehensive college discovery and compensation intelligence platform.</li>
-                                    <li>Built an organized, ledger-style dashboard for comparing admission cutoffs and verified placements.</li>
-                                    <li><a href="https://college-compass-iota.vercel.app/" target="_blank" style="color: var(--clr-vibrant-4); text-decoration: underline;">View Live Project</a></li>
-                                </ul>
-                            </div>
-                            <div class="resume-project" style="margin-top: 1.5rem;">
-                                <h4>TaskMaster PHP System</h4>
-                                <p class="project-tags">Web Application, Backend, PHP, SQLite</p>
-                                <ul class="resume-list">
-                                    <li>Developed a secure PHP task management system showcasing core backend development concepts.</li>
-                                    <li>Implemented zero-configuration SQLite database, bcrypt password hashing, and XSS protection.</li>
-                                    <li><a href="https://abhijit-euon.free.nf/" target="_blank" style="color: var(--clr-vibrant-4); text-decoration: underline;">View Live Project</a></li>
-                                </ul>
-                            </div>
-                            <div class="resume-project" style="margin-top: 1.5rem;">
-                                <h4>UPI Payment App</h4>
-                                <p class="project-tags">Web Application, Frontend, Payment Interface</p>
-                                <ul class="resume-list">
-                                    <li>Developed a responsive UPI payment application interface.</li>
-                                    <li>Focused on modern UI/UX design principles and interactive components.</li>
-                                    <li><a href="https://upi-payment-app-puce.vercel.app/" target="_blank" style="color: var(--clr-vibrant-4); text-decoration: underline;">View Live Project</a></li>
-                                </ul>
-                            </div>
-                        </section>
-                    </article>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Profile Modal (Moved from sidebar) -->
-    <div class="about-modal" id="profilePopup">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" style="max-width: 400px; padding: 0;">
-            <button class="modal-close">&times;</button>
-            <div class="profile-card" style="border: none;">
-                <div class="profile-avatar-wrapper" style="padding-top: 3rem;">
-                    <img src="profile.jpg" alt="Abhijit Kumar" class="profile-avatar" style="width: 100px; height: 100px;">
-                </div>
-                <div class="profile-info" style="padding: 1.5rem;">
-                    <h2 class="profile-name" style="font-size: 1.5rem;">Abhijit Kumar</h2>
-                    <p class="profile-headline" style="font-size: 1rem;">Software Engineer @ Aspiring</p>
-                </div>
-                <div class="profile-stats" style="padding: 1.5rem; background: var(--glass-bg);">
-                    <div class="stat-item" style="margin-bottom: 0.5rem;">
-                        <span>Profile views</span>
-                        <span class="stat-value" id="profile-views-count" style="font-size: 1.1rem;">0</span>
-                    </div>
-                    <div class="stat-item">
-                        <span>Post impressions</span>
-                        <span class="stat-value" style="font-size: 1.1rem;">856</span>
-                    </div>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" class="menu-btn" style="width: 100%; padding: 1rem; background: #0077b5; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; display: block; text-align: center;">View LinkedIn</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Hidden Iframe for Google Form Background Processing -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="Submission Iframe"></iframe>
 
-    <!-- Contact Modal -->
-    <div class="about-modal" id="contactModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close tooltip-close">&times;</button>
-            <div class="footer-content" style="padding: 4rem 0;">
-                <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: #888;">Drop a line</h2>
-                <a href="mailto:work.abhijit.27@gmail.com" class="footer-email">work.abhijit.27@gmail.com</a>
-                <div class="social-links" style="margin-top: 3rem; display: flex; flex-direction: row; gap: 2rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://www.linkedin.com/in/abhijit-kumar-713827284" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 4px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        LinkedIn
-                    </a>
-                    <a href="https://github.com/Abhijiteuon" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 4px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        GitHub
-                    </a>
-                    <a href="https://www.instagram.com/abhijit_euon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="display: flex; align-items: center; gap: 0.75rem; border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 4px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                        Instagram
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Genospark Certificate Preview Modal -->
-    <div class="about-modal" id="genosparkCertModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" style="max-width: 900px; padding: 2rem; max-height: 90vh; overflow-y: auto;">
-            <button class="modal-close tooltip-close" style="top: 15px; right: 20px;">&times;</button>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <h2 style="font-family: var(--font-heading); font-size: 1.8rem; background: var(--text-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.4rem;">Internship Experience Certificate</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Genospark Innovative Solutions Pvt. Ltd. • Full Stack Development Intern</p>
-            </div>
-            <div style="border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); background: #111; margin-bottom: 1.5rem;">
-                <img src="Genospark_Internship_Certificate.png" alt="Genospark Innovative Solutions Experience Certificate - Abhijit Kumar" style="width: 100%; height: auto; display: block; object-fit: contain;">
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--card-border); padding-top: 1.2rem;">
-                <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <div><strong style="color: var(--text-color);">Recipient:</strong> Abhijit Kumar</div>
-                    <div><strong style="color: var(--text-color);">Role:</strong> Remote Intern — Full Stack Development (06 July 2026 – 31 August 2026)</div>
-                    <div><strong style="color: var(--text-color);">Verification ID:</strong> 2026I10047 • <strong style="color: var(--text-color);">Student ID:</strong> 2407860100002 • <strong style="color: var(--text-color);">Date:</strong> 19-10-2026</div>
-                </div>
-                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
-                    <a href="https://genospark.in/employee-verification" target="_blank" class="menu-btn" style="padding: 0.7rem 1.4rem; background: rgba(99, 102, 241, 0.15); color: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        Verify Online ↗
-                    </a>
-                    <a href="Genospark_Internship_Certificate.pdf" target="_blank" class="menu-btn" style="padding: 0.7rem 1.4rem; background: var(--primary-gradient); color: white; border: none; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Download PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bireena Certificate Preview Modal -->
-    <div class="about-modal" id="bireenaCertModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content" style="max-width: 900px; padding: 2rem; max-height: 90vh; overflow-y: auto;">
-            <button class="modal-close tooltip-close" style="top: 15px; right: 20px;">&times;</button>
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <h2 style="font-family: var(--font-heading); font-size: 1.8rem; background: var(--text-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.4rem;">Internship Completion Certificate</h2>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Bireena Info Tech Co. • Full Stack Developer Internship</p>
-            </div>
-            <div style="border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); background: #111; margin-bottom: 1.5rem;">
-                <img src="Bireena_Internship_Certificate.png" alt="Bireena Info Tech Internship Certificate - Abhijit Kumar" style="width: 100%; height: auto; display: block; object-fit: contain;">
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--card-border); padding-top: 1.2rem;">
-                <div style="font-size: 0.85rem; color: var(--text-muted);">
-                    <div><strong style="color: var(--text-color);">Recipient:</strong> Abhijit Kumar</div>
-                    <div><strong style="color: var(--text-color);">Role:</strong> Full Stack Developer Intern (01 July 2026 – 30 August 2026)</div>
-                    <div><strong style="color: var(--text-color);">Certificate No:</strong> BR2K26FSD031 • <strong style="color: var(--text-color);">Issued:</strong> 03/09/2026</div>
-                </div>
-                <div style="display: flex; gap: 0.8rem;">
-                    <a href="Bireena_Internship_Certificate.pdf" target="_blank" class="menu-btn" style="padding: 0.7rem 1.4rem; background: var(--primary-gradient); color: white; border: none; border-radius: 6px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Download PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Scripts -->
     <script src="main.js"></script>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
-    <!-- Hidden Iframe for Google Forms background submission -->
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 </body>
 </html>
